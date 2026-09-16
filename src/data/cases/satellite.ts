@@ -3,14 +3,14 @@ import type { CaseStudyData } from '../schema';
 // Narrative: portfolio-content/projects/pixel-satellite-sos/案例.md (simulation).
 // Media: existing reference assets. No personal attribution or new factual claims.
 export const satellite: CaseStudyData = {
-  slug: 'satellite-sos', language: 'en',
+  slug: 'satellite-sos', entryType: 'demo-case', language: 'en',
   provenance: {
     kind: 'simulation',
-    notice: 'Template demonstration · Reference media with a simulated design narrative. Roles, decisions and observations are not the portfolio owner’s experience.',
+    notice: 'Demo case · Reference media with a simulated design narrative. Roles, decisions and observations are not the portfolio owner’s experience or reusable starter copy.',
     source: { label: 'Reference case by Dousan Miao', href: 'https://dousanmiao.com/#/satellite-sos' },
   },
   hero: {
-    title: 'Pixel Satellite SOS', subtitle: 'Guiding alignment, signaling connection', status: 'Simulation',
+    title: 'Pixel Satellite SOS', subtitle: 'Guiding alignment, signaling connection', status: 'Demo case',
     media: { type: 'video', src: '/assets/media/satellite.mp4', alt: 'Reference demonstration of satellite alignment' },
   },
   snapshot: {

@@ -14,9 +14,11 @@ const compiled = await build({
       import React from 'react';
       import { renderToStaticMarkup } from 'react-dom/server';
       import { CaseStudy } from './src/components/CaseStudy';
+      import { TemplateReference } from './src/components/TemplateReference';
       export { caseStudies } from './src/data/registry';
       export { focusTone } from './src/components/FocusTags';
       export const render = data => renderToStaticMarkup(React.createElement(CaseStudy, {data}));
+      export const renderReference = () => renderToStaticMarkup(React.createElement(TemplateReference));
     `,
     resolveDir: root, loader: 'tsx',
   },
@@ -25,7 +27,7 @@ const compiled = await build({
 });
 const modulePath = path.join(scratch, 'render.mjs');
 await writeFile(modulePath, compiled.outputFiles[0].text);
-const { caseStudies, render, focusTone } = await import(pathToFileURL(modulePath));
+const { caseStudies, render, renderReference, focusTone } = await import(pathToFileURL(modulePath));
 
 test('registered cases have unique slugs, usable media and explicit chapter coverage', async () => {
   const slugs = new Set();
@@ -42,6 +44,7 @@ test('registered cases have unique slugs, usable media and explicit chapter cove
     assert.ok(!slugs.has(data.slug), 'duplicate route');
     slugs.add(data.slug);
     assert.match(data.slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+    assert.ok(['case-study', 'demo-case'].includes(data.entryType));
     assert.ok(data.hero.title && data.snapshot.summary.length);
     if (data.provenance.kind !== 'original') assert.ok(data.provenance.notice);
     for (const key of ['problem', 'strategy', 'decisions', 'experience', 'impact', 'reflection']) {
@@ -65,7 +68,8 @@ test('sample renders eight chapter responsibilities in order and distinguishes s
   const anchors = ['case-header', 'snapshot', 'id="problem"', 'id="strategy"', 'id="decisions"', 'id="experience"', 'id="impact"', 'id="reflection"'];
   let previous = -1;
   for (const anchor of anchors) { const at = html.indexOf(anchor); assert.ok(at > previous, anchor); previous = at; }
-  assert.match(html, /Template demonstration/);
+  assert.match(html, /Demo case/);
+  assert.match(html, /not the portfolio owner.*reusable starter copy/);
   assert.match(html, /Focus/);
   assert.match(html, /Alignment Guidance/);
   assert.match(html, /Reference prototype footage/);
@@ -75,7 +79,7 @@ test('sample renders eight chapter responsibilities in order and distinguishes s
 });
 
 const minimal = {
-  slug: 'different-project', language: 'en', provenance: { kind: 'original' },
+  slug: 'different-project', entryType: 'case-study', language: 'en', provenance: { kind: 'original' },
   hero: { title: 'A different product', subtitle: 'An independent story' },
   snapshot: { summary: ['A text-only case.'], focus: ['AI Search'] },
   ...Object.fromEntries(['problem', 'strategy', 'decisions', 'experience', 'impact', 'reflection'].map(key => [key, { omitted: 'Not applicable to this test fixture' }])),
@@ -85,6 +89,17 @@ test('another project renders without inherited media, claims or empty omitted s
   assert.match(html, /A different product/);
   assert.match(html, /AI Search/);
   assert.doesNotMatch(html, /Satellite|Dousan|<video|<img|<iframe|id="reflection"|Not applicable/);
+});
+test('template reference is neutral, separate from the case registry, and shows fixed and flexible anatomy', () => {
+  const html = renderReference();
+  assert.match(html, /Template reference/);
+  assert.match(html, /Fixed hero/);
+  assert.match(html, /Project title/);
+  assert.match(html, /Feature label/);
+  assert.match(html, /Action title/);
+  assert.match(html, /Optional/);
+  assert.doesNotMatch(html, /Satellite|Dousan|Emergency|Pixel/);
+  assert.ok(!caseStudies.some(item => item.slug === 'template-reference'));
 });
 test('walkthrough supports one or six text-only steps and captions without fixed four-step assumptions', () => {
   for (const count of [1, 6]) {

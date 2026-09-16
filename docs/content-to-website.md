@@ -6,8 +6,8 @@
 
 1. 讀兩個 repositories 的 AGENTS、內容庫 README 與 Git 規範，檢查各自 Git 狀態後同步 main。兩庫保持 Private。
 2. 讀內容庫的 `案例章節架構.md`、目標 `案例.md` 及筆記中的狀態、事實／來源、素材與缺口。內容未完稿時只能製作標明用途的預覽；不能把待辦或虛構情節發布成真實經歷。
-3. 讀本站 `src/data/schema.ts`、`src/components/CaseStudy.tsx` 和相關元件。把確認好的內容映射到 schema；不要要求內容作者另做 JSON，也不要先複製 Pixel 的事實。
-4. 在 `src/data/cases/<slug>.ts` 建立一份 `CaseStudyData`，並在 `src/data/registry.ts` 註冊。入口卡片與 `#/<slug>` 路由會自動產生。未知路由顯示找不到案例，不回退成 Pixel。
+3. 讀本站 `src/data/schema.ts`、`src/components/CaseStudy.tsx` 和相關元件；需要理解固定／彈性版式時查看 `#/template-reference`。把確認好的內容映射到 schema；不要要求內容作者另做 JSON，也不要先複製 Pixel 的事實或 Template reference 的提示文字。
+4. 在 `src/data/cases/<slug>.ts` **從空白資料物件建立**一份 `CaseStudyData`，設定 `entryType: 'case-study'`，並在 `src/data/registry.ts` 註冊。只共用 schema、元件和版式，不複製 `satellite.ts`。入口卡片與 `#/<slug>` 路由會自動產生。未知路由顯示找不到案例，不回退成 Demo case。
 5. 將授權且已確認的網頁素材放 `public/assets/projects/<slug>/`，在既有 `docs/asset-manifest.json` 登記來源、原內容路徑、使用章節與授權／確認狀態。原始大檔留在內容庫的素材工作流程，不為網站搬入所有素材。缺檔時回報，不能沿用 Pixel 檔案冒充。
 6. 執行 typecheck、test:content、build、test:sites，開啟本機預覽；確認桌機／手機、明暗模式、媒體與鍵盤操作。檢查差異與來源，commit、push。公開發布或部署另依使用者授權處理。
 
@@ -25,6 +25,13 @@
 | Reflection | `reflection` | 作者確認的學習、未解問題、取捨 |
 
 Hero／Snapshot 的版式固定，後續篇幅、決策數量、圖片／影片配置可隨內容調整。Section label 交代職責，title 寫該專案的 action title。Focus 用 2–5 個可支持的領域／能力短 tag；自動柔色配色固定由標籤文字決定，避免重繪時閃動。
+
+## Template reference 與 Demo case
+
+- `#/template-reference` 是中性的版式參考頁：只展示固定 Hero／Snapshot、八章職責、可變決策數量與選配媒體位置。它不是案例、沒有專案事實，也不放進 `caseStudies` registry。
+- `#/satellite-sos` 是明確標示的 **Demo case**：用模擬敘事與第三方參考媒體測試模板能力。它不是空白模板，也不是新專案的內容起點。
+- 真實專案只能從內容庫相對應的 `案例.md` 與來源建立新的資料檔。可重用的是 `CaseStudyData` schema、共用 components 與 CSS；不得重用 Template reference 提示字、Satellite 標題／正文／Focus／媒體／人物／觀察／成果。
+- 若新案例輸出仍包含 `Satellite`、`Dousan`、`Template reference`、`Project title`、`Action title` 等非來源字詞，視為交接失敗，必須在 commit 前排除。
 
 三個中段的重點與反例以內容庫 `案例章節架構.md` 為準，不在這裡複製第二套寫作規則。方向章可很短；決策內容單元承載推理；體驗章承載操作序列。網站不顯示 Key Decisions 的總 label、總標題或編號，這個章節只存在於內容結構與無障礙標示中。
 
@@ -85,4 +92,4 @@ reflection: { omitted: '作者尚未確認反思；目前只供預覽' },
 
 交付時列出來源案例、新增路由、修改檔案、缺漏與檢查結果。用另一組內容數量或測試 fixture 驗證模板，不把測試假資料註冊成公開作品。不要更改八章敘事來配合舊模板，缺呈現能力時擴充共用元件。
 
-目前 Pixel 範例使用內容庫已標示的模擬情節，與網站既有的第三方參考媒體一起示範八章。素材來源記在 manifest，但來源紀錄不代表已取得公開再使用授權；正式發布前需確認。它不代表真實案例已完成 Discovery。
+目前 Pixel Satellite SOS Demo case 使用內容庫已標示的模擬情節，與網站既有的第三方參考媒體一起示範八章。素材來源記在 manifest，但來源紀錄不代表已取得公開再使用授權；正式發布前需確認。它不代表真實案例已完成 Discovery，也不得作為新案例的 copy source。

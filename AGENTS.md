@@ -8,7 +8,9 @@ Hero and Snapshot have a fixed anatomy. Following chapters retain the eight edit
 
 The Snapshot field is **Focus**, shown as small, soft-colored tags with stable automatically assigned colors, wrapping on narrow screens. Tags describe project domains / capabilities; My role separately identifies responsibility.
 
-The Pixel sample is a labeled simulation with reference assets, not the owner's portfolio experience. Preserve this distinction. Do not transfer its narrative, people, statistics or outcomes into new projects.
+The Pixel Satellite SOS route is a **Demo case**, not the template and not the owner's portfolio experience. Preserve this distinction. Do not transfer its narrative, labels, people, statistics, media, or outcomes into new projects. `#/template-reference` is the neutral visual anatomy reference; it is not registered in `caseStudies` and its prompts are never project copy.
+
+For every real project, read `portfolio-content/projects/<project>/案例.md` and the cited source boundaries, create a new `src/data/cases/<slug>.ts` with `entryType: 'case-study'`, and register that file. Reuse only shared schema, components, and layout—never duplicate `satellite.ts` as a content starter.
 
 Key Decisions render without a visible chapter intro or numbering. Each decision starts with a short feature label and a reader-facing action title, followed by text and media blocks in the exact sequence defined by `案例.md`. Do not generate fixed `The decision` / `Why this direction` rows or separate Design intent cards.
 

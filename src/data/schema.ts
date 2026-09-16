@@ -26,6 +26,8 @@ export interface Decision {
 export interface ExperienceStep { id: string; title: string; text: string; media?: Media }
 export interface CaseStudyData {
   slug: string;
+  /** Real portfolio work or a clearly isolated demonstration. */
+  entryType: 'case-study' | 'demo-case';
   language: 'en' | 'zh-Hant';
   provenance: { kind: 'original' | 'reference' | 'simulation'; notice?: string; source?: Link };
   /** 1. Fixed Hero; status describes the product, never writing progress. */

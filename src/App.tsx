@@ -7,8 +7,9 @@ import { ExternalLink, IconButton, StatusBadge, ThemeProvider, ThemeSwitch, Tool
 import { CaseStudy } from './components/CaseStudy';
 import { CaseMedia } from './components/CaseMedia';
 import { FocusTags } from './components/FocusTags';
+import { TemplateReference } from './components/TemplateReference';
 
-const getRoute = () => location.hash.replace(/^#\/?/, '') || caseStudies[0]?.slug || 'projects';
+const getRoute = () => location.hash.replace(/^#\/?/, '') || 'projects';
 const navigate = (route: string) => { location.hash = route; };
 
 function Projects({ missing = false }: { missing?: boolean }) {
@@ -17,10 +18,14 @@ function Projects({ missing = false }: { missing?: boolean }) {
     document.querySelector('meta[name="description"]')?.setAttribute('content', 'Product design case studies');
   }, []);
   return <div className="case-shell"><Toolbar /><main className="projects-scroll"><div className="projects-content">
-    <h1 className="type-headline">{missing ? 'Case study not found' : 'Case studies'}</h1>
+    <h1 className="type-headline">{missing ? 'Page not found' : 'Portfolio structure'}</h1>
+    {!missing && <a href="#/template-reference" className="project-card template-card">
+      <div className="template-preview" aria-hidden="true"><span>Hero</span><span>Snapshot</span><span>Flexible chapters</span></div>
+      <div className="project-description"><p className="project-kicker">Template reference</p><h2 className="type-title">Case study template</h2><p>Neutral anatomy for fixed and flexible sections.</p><FontAwesomeIcon icon={faArrowRight} aria-hidden="true" /></div>
+    </a>}
     {caseStudies.map(data => <a key={data.slug} href={`#/${data.slug}`} className="project-card">
       {data.hero.media && <div className="project-preview"><CaseMedia media={data.hero.media} controls={false} paused /></div>}
-      <div className="project-description"><h2 className="type-title">{data.hero.title}</h2><p>{data.hero.subtitle}</p><FontAwesomeIcon icon={faArrowRight} aria-hidden="true" /></div>
+      <div className="project-description"><p className="project-kicker">{data.entryType === 'demo-case' ? 'Demo case' : 'Case study'}</p><h2 className="type-title">{data.hero.title}</h2><p>{data.hero.subtitle}</p><FontAwesomeIcon icon={faArrowRight} aria-hidden="true" /></div>
     </a>)}
   </div></main></div>;
 }
@@ -47,6 +52,6 @@ export function App() {
   useEffect(() => { const update = () => setRoute(getRoute()); window.addEventListener('hashchange', update); return () => window.removeEventListener('hashchange', update); }, []);
   const data = caseStudies.find(item => item.slug === route);
   return <ThemeProvider><AnimatePresence mode="wait"><motion.div className="route-view" key={route} initial={{ opacity: reduced ? 1 : 0 }} animate={{ opacity: 1 }} exit={{ opacity: reduced ? 1 : 0 }} transition={{ duration: reduced ? 0 : 0.18 }}>
-    {route === 'projects' ? <Projects /> : route === 'design-system' ? <DesignSystem /> : data ? <CaseStudy data={data} /> : <Projects missing />}
+    {route === 'projects' ? <Projects /> : route === 'template-reference' ? <TemplateReference /> : route === 'design-system' ? <DesignSystem /> : data ? <CaseStudy data={data} /> : <Projects missing />}
   </motion.div></AnimatePresence></ThemeProvider>;
 }
