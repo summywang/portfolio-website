@@ -1,9 +1,12 @@
 import { useEffect, useRef, type ReactNode } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowsToCircle, faCircleExclamation, faSignal, faTree } from '@fortawesome/free-solid-svg-icons';
 import { FocusTags } from './FocusTags';
+import { StepCarousel } from './StepCarousel';
 import { Toolbar } from './ui';
 
-function Slot({ label, optional = false }: { label: string; optional?: boolean }) {
-  return <div className="template-slot"><span>{label}</span>{optional && <small>Optional</small>}</div>;
+function MediaSlot({ label = 'Image or video', optional = true, className = '' }: { label?: string; optional?: boolean; className?: string }) {
+  return <div className={`template-media-surface ${className}`}><span>{label}</span>{optional && <small>Optional</small>}</div>;
 }
 
 function ReferenceSection({ label, title, children }: { label: string; title: string; children: ReactNode }) {
@@ -29,7 +32,7 @@ export function TemplateReference() {
         <div className="header-copy"><p className="template-anatomy">Fixed hero</p><h1 ref={title} tabIndex={-1} className="type-display">Project title</h1><p className="type-subtitle">One-line project promise or outcome</p></div>
         <span className="glass status-badge">Template reference</span>
       </header>
-      <div className="hero-width"><Slot label="Hero media" optional /></div>
+      <div className="hero-width template-hero-media"><MediaSlot label="Hero image or video" /></div>
       <article className="article-body">
         <section className="snapshot article-width" aria-label="Fixed project snapshot">
           <p className="reference-notice">Structure guide only · Replace every prompt with facts from the project’s <code>案例.md</code>. This page is not a case study and is never copied as project content.</p>
@@ -43,18 +46,28 @@ export function TemplateReference() {
           </dl>
         </section>
 
-        <ReferenceSection label="Fast context" title="Context title"><p>Optional background, environment, scale, constraints, or relationships needed before the problem.</p><Slot label="Supporting context" optional /></ReferenceSection>
-        <ReferenceSection label="Problem framing" title="Problem framing title"><p>State the central tension and why the existing experience falls short.</p><div className="template-list"><span>Pain point</span><span>Pain point</span><span>Pain point</span></div></ReferenceSection>
+        <ReferenceSection label="Fast context" title="Context title"><p>Optional background, environment, scale, constraints, or relationships needed before the problem.</p><div className="stats-grid context-grid">
+          <article className="stat-card"><FontAwesomeIcon icon={faSignal} aria-hidden="true" /><h3>Verified context or statistic</h3><p>Short source-grounded explanation.</p></article>
+          <article className="stat-card"><FontAwesomeIcon icon={faTree} aria-hidden="true" /><h3>Usage environment</h3><p>A condition that changes the experience.</p></article>
+          <article className="stat-card"><FontAwesomeIcon icon={faArrowsToCircle} aria-hidden="true" /><h3>System relationship</h3><p>Scale, actors, or connected states.</p></article>
+        </div></ReferenceSection>
+        <ReferenceSection label="Problem framing" title="Problem framing title"><p>State the central tension and why the existing experience falls short.</p><ul className="constraint-list">
+          {['Pain point title', 'Another pain point', 'Constraint or state gap'].map((item, index) => <li key={item}><FontAwesomeIcon icon={faCircleExclamation} aria-hidden="true" /><div><h3>{item}</h3><p>{index === 0 ? 'Explain the user difficulty in one concise sentence.' : 'Add only the tensions needed to frame the problem.'}</p></div></li>)}
+        </ul></ReferenceSection>
         <ReferenceSection label="Strategic direction" title="Strategic direction title"><p>Connect the key insight to the principle or direction that guides the work.</p></ReferenceSection>
 
         <div className="decision-list article-width" aria-label="Key decisions template">
-          <section className="key-decision"><p className="section-label">Feature label</p><h2 className="type-headline">Action title</h2><div className="decision-blocks"><div className="decision-copy"><p>Decision narrative, reasoning, constraints, and evidence boundaries in a natural reading order.</p></div><Slot label="Image or video" optional /><div className="decision-copy"><p>Optional continuation after the media. Add, remove, and reorder blocks to match <code>案例.md</code>.</p></div></div></section>
+          <section className="key-decision"><p className="section-label">Feature label</p><h2 className="type-headline">Action title</h2><div className="decision-blocks"><div className="decision-copy"><p>Decision narrative, reasoning, constraints, and evidence boundaries in a natural reading order.</p></div><MediaSlot /><div className="decision-copy"><p>Optional continuation after the media. Add, remove, and reorder blocks to match <code>案例.md</code>.</p></div></div></section>
           <section className="key-decision"><p className="section-label">Feature label</p><h2 className="type-headline">Another action title</h2><div className="decision-blocks"><div className="decision-copy"><p>Each project may have a different number of decisions. No chapter intro or numbering is shown.</p></div></div></section>
         </div>
 
-        <ReferenceSection label="Real product experience" title="Experience walkthrough title"><p>Show the final user flow or state sequence without repeating decision rationale.</p><div className="template-flow"><Slot label="Step 1" /><Slot label="Step 2" /><Slot label="Step 3" optional /></div></ReferenceSection>
-        <ReferenceSection label="Impact" title="Impact title"><p>Use only confirmed outcomes. Name the evidence type, source, attribution, and limitations.</p><Slot label="Evidence note" optional /></ReferenceSection>
-        <ReferenceSection label="Reflection" title="Reflection title"><p>Close with author-confirmed learning, tradeoffs, or unresolved questions.</p><Slot label="Supporting media" optional /></ReferenceSection>
+        <ReferenceSection label="Real product experience" title="Experience walkthrough title"><p>Show the final user flow or state sequence without repeating decision rationale.</p><StepCarousel showMediaPlaceholder steps={[
+          { id: 'reference-step-1', title: 'Step title', text: 'Describe the user action or visible state.' },
+          { id: 'reference-step-2', title: 'Next step title', text: 'Continue the end-to-end sequence.' },
+          { id: 'reference-step-3', title: 'Final step title', text: 'Close the flow or show the outcome.' },
+        ]} caption="The number of cards follows the actual product flow." /></ReferenceSection>
+        <ReferenceSection label="Impact" title="Impact title"><p>Use only confirmed outcomes. Name the evidence type, source, attribution, and limitations.</p><aside className="evidence-note"><p className="section-label">Evidence type</p><p>Confirmed result with attribution and limitations.</p><p className="evidence-source">Source: verified project evidence</p></aside><MediaSlot /></ReferenceSection>
+        <ReferenceSection label="Reflection" title="Reflection title"><p>Close with author-confirmed learning, tradeoffs, or unresolved questions.</p><MediaSlot /></ReferenceSection>
       </article>
       <footer className="case-footer article-width"><p>Fixed: Hero and Snapshot · Flexible: chapter length, decision count, text and media order</p></footer>
     </main>

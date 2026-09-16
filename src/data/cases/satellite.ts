@@ -18,7 +18,15 @@ export const satellite: CaseStudyData = {
     product: 'Pixel Satellite SOS', role: 'Product designer · simulated role',
     focus: ['Satellite Connectivity', 'Motion Design', 'Interactive Prototyping', 'State Transitions'],
     links: [{ label: 'Reference case', href: 'https://dousanmiao.com/#/satellite-sos' }],
-    context: { title: 'An emergency flow that depends on physical movement', paragraphs: ['The visible sequence includes emergency questions, satellite alignment and waiting for a connection. This case concentrates on alignment and waiting.'] },
+    context: {
+      title: 'An emergency flow that depends on physical movement',
+      paragraphs: ['The visible sequence includes emergency questions, satellite alignment and waiting for a connection. This case concentrates on alignment and waiting.'],
+      highlights: [
+        { icon: 'signal', title: 'The reference flow begins when a regular call cannot connect.' },
+        { icon: 'tree', title: 'Visible guidance asks people to stay outdoors, away from buildings and trees.' },
+        { icon: 'connection', title: 'Alignment is followed by connecting, connected and sending states.' },
+      ],
+    },
   },
   problem: { content: {
     title: 'Reaching the target was only half the interaction',

@@ -5,7 +5,7 @@ import type { ExperienceStep } from '../data/schema';
 import { CaseMedia } from './CaseMedia';
 import { IconButton } from './ui';
 
-export function StepCarousel({ steps, caption }: { steps: ExperienceStep[]; caption?: string }) {
+export function StepCarousel({ steps, caption, showMediaPlaceholder = false }: { steps: ExperienceStep[]; caption?: string; showMediaPlaceholder?: boolean }) {
   const track = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const reduced = useReducedMotion();
@@ -40,7 +40,9 @@ export function StepCarousel({ steps, caption }: { steps: ExperienceStep[]; capt
   return <section className="flow-section" aria-label="Product walkthrough" aria-roledescription="carousel">
     <div className="carousel-track" ref={track} onScroll={sync} onKeyDown={keyboard} tabIndex={0} aria-label={`${steps.length} steps; use left and right arrow keys`}>
       {steps.map((step, index) => <article className="step-card" key={step.id} role="group" aria-roledescription="slide" aria-label={`Step ${index + 1} of ${steps.length}: ${step.title}`}>
-        {step.media && <div className="step-visual"><CaseMedia media={step.media} controls={false} paused={paused} /></div>}
+        {(step.media || showMediaPlaceholder) && <div className="step-visual">{step.media
+          ? <CaseMedia media={step.media} controls={false} paused={paused} />
+          : <div className="template-media-surface"><span>Image or video</span><small>Optional</small></div>}</div>}
         <div className="step-copy"><span className="type-title step-number">{String(index + 1).padStart(2, '0')}</span><h3 className="type-title">{step.title}</h3><p>{step.text}</p>{step.media?.caption && <p className="step-caption">{step.media.caption}</p>}</div>
       </article>)}
     </div>

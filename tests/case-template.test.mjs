@@ -73,6 +73,9 @@ test('sample renders eight chapter responsibilities in order and distinguishes s
   assert.match(html, /Focus/);
   assert.match(html, /Alignment Guidance/);
   assert.match(html, /Reference prototype footage/);
+  assert.equal(caseStudies[0].snapshot.context?.highlights?.length, 3);
+  assert.match(html, /The reference flow begins when a regular call cannot connect/);
+  assert.match(html, /context-grid/);
   assert.doesNotMatch(html, />Skills<|As UX lead|8 separate emergency sessions|Make each change in state actionable|decision-number/);
   const decisionMarkup = html.slice(html.indexOf('id="decisions"'), html.indexOf('id="experience"'));
   assert.doesNotMatch(decisionMarkup, /The decision|Why this direction|Design intent|evidence-note/);
@@ -98,6 +101,12 @@ test('template reference is neutral, separate from the case registry, and shows 
   assert.match(html, /Feature label/);
   assert.match(html, /Action title/);
   assert.match(html, /Optional/);
+  assert.match(html, /constraint-list/);
+  assert.match(html, /class="step-card"/);
+  assert.match(html, /Evidence type/);
+  assert.match(html, /template-hero-media/);
+  assert.match(html, /Image or video/);
+  assert.doesNotMatch(html, /template-slot/);
   assert.doesNotMatch(html, /Satellite|Dousan|Emergency|Pixel/);
   assert.ok(!caseStudies.some(item => item.slug === 'template-reference'));
 });

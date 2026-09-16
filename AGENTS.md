@@ -6,6 +6,8 @@ Start new project work with [content-to-website handoff](docs/content-to-website
 
 Hero and Snapshot have a fixed anatomy. Following chapters retain the eight editorial responsibilities while adapting media and decision count to the project. Keep the shared renderer data-driven; never embed project text or media paths in it.
 
+Hero media uses a fixed 16:9 frame. Template reference previews must resemble final components: supporting context uses context cards, Problem Framing uses the real pain-point list, Real Product Experience uses the working carousel, and Impact / Reflection visibly support optional media. Do not replace these with generic wireframe boxes.
+
 The Snapshot field is **Focus**, shown as small, soft-colored tags with stable automatically assigned colors, wrapping on narrow screens. Tags describe project domains / capabilities; My role separately identifies responsibility.
 
 The Pixel Satellite SOS route is a **Demo case**, not the template and not the owner's portfolio experience. Preserve this distinction. Do not transfer its narrative, labels, people, statistics, media, or outcomes into new projects. `#/template-reference` is the neutral visual anatomy reference; it is not registered in `caseStudies` and its prompts are never project copy.

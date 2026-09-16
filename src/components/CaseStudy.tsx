@@ -1,7 +1,7 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
-import type { CaseStudyData, Chapter } from '../data/schema';
+import { faArrowsToCircle, faCircleExclamation, faSignal, faTree } from '@fortawesome/free-solid-svg-icons';
+import type { CaseStudyData, Chapter, ContextHighlight } from '../data/schema';
 import { chapterLabels } from '../data/schema';
 import { ExternalLink, Toolbar } from './ui';
 import { CaseMedia, MediaList } from './CaseMedia';
@@ -20,6 +20,13 @@ function Section({ id, label, chapter, children }: { id: string; label: string; 
     {children}
     <MediaList items={chapter.media} />
   </section>;
+}
+const contextIcons = { signal: faSignal, tree: faTree, connection: faArrowsToCircle } as const;
+export function ContextCards({ items }: { items: ContextHighlight[] }) {
+  return <div className="stats-grid context-grid">{items.map((item, index) => <article className="stat-card" key={`${item.title}-${index}`}>
+    {item.icon && <FontAwesomeIcon icon={contextIcons[item.icon]} aria-hidden="true" />}
+    <h3>{item.title}</h3>{item.body && <p>{item.body}</p>}
+  </article>)}</div>;
 }
 export function CaseStudy({ data }: { data: CaseStudyData }) {
   const title = useRef<HTMLHeadingElement>(null);
@@ -45,7 +52,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
         <div className="header-copy"><h1 ref={title} tabIndex={-1} className="type-display">{hero.title}</h1><p className="type-subtitle">{hero.subtitle}</p></div>
         {hero.status && <span className="glass status-badge">{hero.status}</span>}
       </header>
-      {hero.media && <div className="hero-width"><CaseMedia media={hero.media} eager /></div>}
+      {hero.media && <div className="hero-width hero-media"><CaseMedia media={hero.media} eager /></div>}
       <article className="article-body">
         <section className="snapshot article-width" aria-label="Project snapshot">
           {data.provenance.notice && <p className="reference-notice">{data.provenance.notice}</p>}
@@ -60,6 +67,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
         </section>
         {snapshot.context && <Section id="context" label="Fast context" chapter={snapshot.context}>
           {!!snapshot.context.stats?.length && <div className="stats-grid">{snapshot.context.stats.map(stat => <div className="stat-card" key={stat.text}><p>{stat.text}</p><a className="stat-source" href={stat.source.href} target="_blank" rel="noreferrer">{stat.source.label}</a></div>)}</div>}
+          {!!snapshot.context.highlights?.length && <ContextCards items={snapshot.context.highlights} />}
         </Section>}
         {problem.content && <Section id="problem" label={chapterLabels.problem} chapter={problem.content}>
           {!!problem.content.pains.length && <ul className="constraint-list">{problem.content.pains.map(pain => <li key={pain.title}><FontAwesomeIcon icon={faCircleExclamation} aria-hidden="true" /><div><h3>{pain.title}</h3><p>{pain.body}</p></div></li>)}</ul>}

@@ -15,7 +15,7 @@
 
 | 內容章節 | Schema 欄位 | 呈現 |
 |---|---|---|
-| Hero | `hero` | 固定標題、副標、選配產品狀態與主媒體 |
+| Hero | `hero` | 固定標題、副標、選配產品狀態與 16:9 主媒體 |
 | Fast Context | `snapshot` | 固定摘要與 Product／My role／Timeline／Focus／Team；之後按需加 context |
 | Problem Framing | `problem` | 引言＋pain points |
 | Strategic Direction | `strategy` | insight 如何形成解題原則與優先順序 |
@@ -25,6 +25,8 @@
 | Reflection | `reflection` | 作者確認的學習、未解問題、取捨 |
 
 Hero／Snapshot 的版式固定，後續篇幅、決策數量、圖片／影片配置可隨內容調整。Section label 交代職責，title 寫該專案的 action title。Focus 用 2–5 個可支持的領域／能力短 tag；自動柔色配色固定由標籤文字決定，避免重繪時閃動。
+
+Fast Context 可用 `context.highlights` 呈現 1–3 張背景卡片；內容可以是已確認的環境、關係或來源可靠的統計，不為了填版面創造數字。Impact 與 Reflection 繼承 `Chapter.media`，可依 `案例.md` 在正文後加入圖片或影片。
 
 ## Template reference 與 Demo case
 

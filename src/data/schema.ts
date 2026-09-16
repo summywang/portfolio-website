@@ -24,6 +24,11 @@ export interface Decision {
   blocks: DecisionBlock[];
 }
 export interface ExperienceStep { id: string; title: string; text: string; media?: Media }
+export interface ContextHighlight {
+  icon?: 'signal' | 'tree' | 'connection';
+  title: string;
+  body?: string;
+}
 export interface CaseStudyData {
   slug: string;
   /** Real portfolio work or a clearly isolated demonstration. */
@@ -36,7 +41,10 @@ export interface CaseStudyData {
   snapshot: {
     summary: string[]; product?: string; role?: string; timeline?: string; team?: string;
     focus: string[]; links?: Link[];
-    context?: Chapter & { stats?: { text: string; source: Link }[] };
+    context?: Chapter & {
+      stats?: { text: string; source: Link }[];
+      highlights?: ContextHighlight[];
+    };
   };
   /** 3. Tension + pain points. */
   problem: OptionalChapter<Chapter & { pains: { title: string; body: string }[] }>;

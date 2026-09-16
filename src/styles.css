@@ -75,6 +75,7 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .case-scroll::-webkit-scrollbar { display: none; }
 .article-width { width: 100%; max-width: var(--article-width); margin-inline: auto; }
 .hero-width { width: 100%; max-width: var(--hero-width); margin-inline: auto; }
+.hero-media > .case-media > img, .hero-media > .case-media > .video-frame { width: 100%; aspect-ratio: 16 / 9; background: var(--surface); }
 .case-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 56px; }
 .header-copy { flex: 1; min-width: 0; }
 .case-header h1 { outline: none; }
@@ -101,6 +102,8 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .stats-grid { margin-top: 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .stat-card { background: var(--surface); border-radius: var(--radius-card); padding: 21px; color: var(--foreground); font-weight: 500; }
 .stat-card > svg { display: block; font-size: 18.662px; margin-bottom: 7px; }
+.stat-card h3 { font-size: inherit; font-weight: 500; line-height: 1.625; }
+.stat-card h3 + p { margin-top: 7px; color: var(--muted-foreground); font-weight: 400; }
 .stat-text { padding-top: 28px; }
 .constraint-list { list-style: none; padding: 21px; background: var(--surface); border-radius: var(--radius-card); display: flex; flex-direction: column; gap: 21px; }
 .constraint-list li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 11px; }
@@ -173,14 +176,14 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .template-preview span:first-child { width: 72%; color: var(--foreground); }
 .template-preview span:nth-child(2) { width: 88%; }
 .template-anatomy { color: var(--muted-foreground); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
-.template-slot { min-height: 150px; margin-top: 28px; border: 1px dashed var(--border); border-radius: var(--radius-card); background: color-mix(in srgb, var(--surface) 55%, transparent); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; color: var(--muted-foreground); text-align: center; padding: 24px; }
-.template-slot span { color: var(--foreground); font-weight: 500; }
-.template-slot small { font-size: 12px; }
-.template-section > .template-slot { margin-top: 28px; }
-.template-list { margin-top: 21px; padding: 21px; display: grid; gap: 14px; border-radius: var(--radius-card); background: var(--surface); }
-.template-list span { color: var(--foreground); }
-.template-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
-.template-flow .template-slot { margin-top: 0; min-height: 180px; }
+.template-media-surface { width: 100%; min-height: 150px; border: 1px dashed var(--border); border-radius: var(--radius-card); background: var(--surface); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; color: var(--muted-foreground); text-align: center; padding: 24px; }
+.template-media-surface span { color: var(--foreground); font-weight: 500; }
+.template-media-surface small { font-size: 12px; }
+.template-hero-media { aspect-ratio: 16 / 9; }
+.template-hero-media .template-media-surface { height: 100%; min-height: 0; }
+.template-section > .template-media-surface { margin-top: 28px; aspect-ratio: 16 / 9; }
+.decision-blocks > .template-media-surface { margin-top: 28px; aspect-ratio: 16 / 9; }
+.step-visual > .template-media-surface { height: 100%; min-height: 0; border: 0; border-radius: 0; }
 @media (max-width: 1199px) {
   .toolbar { position: relative; top: auto; right: auto; padding: max(12px, env(safe-area-inset-top)) 24px 12px; background: var(--background); border-bottom: 1px solid var(--border); flex-shrink: 0; }
   .case-scroll { padding-top: 36px; }
@@ -235,8 +238,6 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
   .type-row { grid-template-columns: 1fr; gap: 12px; }
   .surface-examples { grid-template-columns: 1fr; }
   .template-preview { min-height: 170px; padding: 24px; }
-  .template-flow { grid-template-columns: 1fr; }
-  .template-flow .template-slot { min-height: 120px; }
 }
 @media (max-width: 359px) {
   .metadata { grid-template-columns: 1fr; }
