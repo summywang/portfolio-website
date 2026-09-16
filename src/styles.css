@@ -230,3 +230,61 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Shared case-study anatomy; Focus colors are stable, label-derived accents. */
+.article-body { font-size: 1rem; }
+.focus-tags { list-style: none; padding: 0; margin: 7px 0 0; display: flex; flex-wrap: wrap; gap: 7px; }
+.focus-tag { font-size: 12px; font-weight: 500; line-height: 1.5; border-radius: 7px; padding: 4px 9px; max-width: 100%; overflow-wrap: anywhere; }
+.tone-0 { background: #e7edf9; color: #364d78; }
+.tone-1 { background: #f0e8f5; color: #684679; }
+.tone-2 { background: #e4f1ea; color: #326049; }
+.tone-3 { background: #faeadf; color: #805135; }
+.tone-4 { background: #f7e6ed; color: #7b4058; }
+.tone-5 { background: #e1f0f1; color: #356066; }
+[data-theme='dark'] .tone-0 { background: #222d40; color: #bcccef; }
+[data-theme='dark'] .tone-1 { background: #33283c; color: #ddc4ee; }
+[data-theme='dark'] .tone-2 { background: #21372b; color: #b6dec6; }
+[data-theme='dark'] .tone-3 { background: #3d2d23; color: #edc6ab; }
+[data-theme='dark'] .tone-4 { background: #3b2631; color: #ecc0d2; }
+[data-theme='dark'] .tone-5 { background: #203538; color: #b7dce0; }
+.meta-focus { min-width: 0; }
+.metadata { grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); }
+.reference-notice { border-left: 2px solid var(--border); padding-left: 16px; margin-bottom: 24px; font-size: 13px; line-height: 1.65; }
+.section-label { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground); }
+.article-section > .section-label { margin: 0 0 7px; }
+.article-section { margin-top: 64px; }
+.key-decision { margin-top: 35px; padding-top: 28px; border-top: 1px solid var(--border); }
+.decision-heading { display: flex; gap: 16px; align-items: baseline; margin-bottom: 14px; }
+.decision-number { color: var(--muted-foreground); font-size: 14px; font-variant-numeric: tabular-nums; }
+.decision-reasoning { display: grid; gap: 18px; margin-top: 24px; }
+.decision-reasoning > div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; }
+.decision-reasoning dt { font-weight: 500; color: var(--foreground); }
+.evidence-note { padding: 21px; background: var(--surface); border-radius: 16px; margin-top: 24px; }
+.evidence-note .evidence-limit, .evidence-source { font-size: 13px; line-height: 1.6; }
+.evidence-note p + p { margin-top: 8px; }
+.media-list { display: grid; gap: 28px; margin-top: 28px; }
+.case-media { min-width: 0; }
+.case-media > img { display: block; max-width: 100%; width: 100%; height: auto; border-radius: var(--radius-card); object-fit: var(--media-fit); }
+.case-media video { object-fit: var(--media-fit); }
+.case-media > figcaption { font-size: 12px; line-height: 1.6; margin-top: 8px; color: var(--muted-foreground); }
+.image-fallback { padding: 40px 24px; background: var(--surface); border-radius: var(--radius-card); }
+.step-visual .case-media { height: 100%; }
+.step-visual .case-media > img { height: 100%; border-radius: 0; object-fit: var(--media-fit); }
+.step-visual .case-media > figcaption { display: none; }
+.step-card { min-width: 0; }
+.step-copy h3 { margin-top: 8px; }
+.step-caption { font-size: 12px; line-height: 1.6; }
+.carousel-dots { flex-wrap: wrap; }
+.stat-source { display: inline-block; font-size: 12px; text-decoration: underline; margin-top: 12px; }
+.project-card + .project-card { margin-top: 24px; }
+.project-card .case-media > img { border-radius: 0; }
+.system-content .case-media { margin-top: 24px; }
+@media (max-width: 767px) {
+  .metadata { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .meta-focus { grid-column: 1 / -1; }
+  .decision-reasoning > div { grid-template-columns: 1fr; gap: 4px; }
+  .article-section { margin-top: 48px; }
+  .focus-tag { font-size: 13px; }
+  .step-card { flex-basis: 100%; width: 100%; }
+}
+@media (max-width: 359px) { .metadata { grid-template-columns: 1fr; } }

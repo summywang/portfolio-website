@@ -1,5 +1,15 @@
 # Prototype Instructions
 
+## Case study template
+
+Start new project work with [content-to-website handoff](docs/content-to-website.md). Use the content repository's existing `案例.md` and its sources; do not create a second content draft here.
+
+Hero and Snapshot have a fixed anatomy. Following chapters retain the eight editorial responsibilities while adapting media and decision count to the project. Keep the shared renderer data-driven; never embed project text or media paths in it.
+
+The Snapshot field is **Focus**, shown as small, soft-colored tags with stable automatically assigned colors, wrapping on narrow screens. Tags describe project domains / capabilities; My role separately identifies responsibility.
+
+The Pixel sample is a labeled simulation with reference assets, not the owner's portfolio experience. Preserve this distinction. Do not transfer its narrative, people, statistics or outcomes into new projects.
+
 Run the local server yourself and open the preview in the browser available to this environment. Do not give the user server-start instructions when you can run it.
 
 Before making substantial visual changes, use the Product Design plugin's `get-context` skill when the visual source is unclear or no longer matches the current goal. When the user gives durable prototype-specific design feedback, preferences, or decisions, record them in `AGENTS.md`.

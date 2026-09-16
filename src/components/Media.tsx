@@ -4,15 +4,15 @@ import { faPause, faPlay, faArrowUpRightFromSquare } from '@fortawesome/free-sol
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconButton } from './ui';
 
-export function ManagedVideo({ src, label, className = '', controls = true, groupPaused = false, eager = false }: {
-  src: string; label: string; className?: string; controls?: boolean; groupPaused?: boolean; eager?: boolean;
+export function ManagedVideo({ src, label, poster, className = '', controls = true, groupPaused = false, eager = false }: {
+  src: string; label: string; poster?: string; className?: string; controls?: boolean; groupPaused?: boolean; eager?: boolean;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [visible, setVisible] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [userPaused, setUserPaused] = useState(false);
   const [userStarted, setUserStarted] = useState(false);
-  const [hidden, setHidden] = useState(document.hidden);
+  const [hidden, setHidden] = useState(typeof document !== 'undefined' && document.hidden);
   const [failed, setFailed] = useState(false);
   const reduced = useReducedMotion();
 
@@ -40,7 +40,7 @@ export function ManagedVideo({ src, label, className = '', controls = true, grou
     if (video.paused) void video.play().catch(() => setPlaying(false)); else video.pause();
   };
   return <div className={`video-frame ${className}`}>
-    <video ref={ref} src={`${src}#t=0.001`} muted loop playsInline preload={eager ? 'auto' : 'metadata'} aria-label={label}
+    <video ref={ref} src={src.includes('#') ? src : `${src}#t=0.001`} poster={poster} muted loop playsInline preload={eager ? 'auto' : 'metadata'} aria-label={label}
       onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setFailed(true)} />
     {failed ? <div className="media-fallback"><p>影片暫時無法載入</p><a href={src}>開啟影片</a></div> : controls &&
       <IconButton icon={playing ? faPause : faPlay} label={`${playing ? '暫停' : '播放'}${label}`} className="video-toggle" onClick={toggle} />}
