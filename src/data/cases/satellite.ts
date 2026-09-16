@@ -34,33 +34,26 @@ export const satellite: CaseStudyData = {
     paragraphs: ['The simulated direction is to answer two questions together: what is the system doing, and what should the person do next? Keep the same visual focus as the required action changes from moving to waiting.'],
   } },
   decisions: { content: {
-    title: 'Make each change in state actionable',
     items: [
       {
-        id: 'visible-target', title: 'Give alignment a visible target',
-        tension: 'A target communicates a destination, but may leave the physical movement ambiguous.',
-        choice: 'Pair the satellite-and-circle target with directional text.',
-        reasoning: 'The graphic conveys where to aim; the wording describes how to move.',
-        tradeoff: 'The graphic stays simple, but cannot explain every physical action on its own.',
-        evidence: { kind: 'design-intent', text: 'Connect the on-screen target with a physical movement.', source: 'Pixel simulation S02', limitation: 'Simulated reasoning; no real research result is claimed.' },
-        media: [{ type: 'video', src: '/assets/media/prototype.mp4', alt: 'Handheld prototype with a satellite alignment target', caption: 'Reference prototype footage; not evidence of the simulated design history.' }],
+        id: 'visible-target', label: 'Alignment Guidance', title: 'Give alignment a visible target',
+        blocks: [
+          { type: 'text', paragraphs: ['The satellite-and-circle relationship suggests an alignment goal. In this simulation, the target communicates where to go but may still leave the physical movement ambiguous, so directional text explains how to move while the graphic keeps the destination visible.'] },
+          { type: 'media', media: { type: 'video', src: '/assets/media/prototype.mp4', alt: 'Handheld prototype with a satellite alignment target', caption: 'Reference prototype footage; it supports the visible form and prototype context, not the simulated comparison or test history.' } },
+          { type: 'text', paragraphs: ['This is simulated reasoning from S02. The reference media does not establish that this comparison was explored or tested in the original project.'] },
+        ],
       },
       {
-        id: 'stop-cue', title: 'Put the stop cue in the alignment target',
-        tension: 'In the simulation, a title change does not make people stop moving.',
-        alternatives: 'The simulated earlier approach changes only the title.',
-        choice: 'Change the target into a blue wave ring when aligned and connecting.',
-        reasoning: 'Place the change where attention is already focused, while asking the person to hold steady.',
-        tradeoff: 'Shape, color and wording work together; their individual effects cannot be separated.',
-        evidence: { kind: 'observation', text: 'In the simulated scenario, people stop moving after the change.', source: 'Pixel simulation S01', limitation: 'Fictional qualitative observation. No participant count or connection-rate improvement is established.' },
+        id: 'stop-cue', label: 'Alignment Feedback', title: 'Put the stop cue in the alignment target',
+        blocks: [
+          { type: 'text', paragraphs: ['In the simulated iteration, changing only the title did not make people stop moving. The revised concept changes the target into a blue wave ring and pairs it with Connecting and hold-steady guidance, placing the transition where attention is already focused.', 'The simulated observation is that people stopped moving after the change. Shape, color and wording changed together, so the exercise cannot isolate one element or claim a measured improvement.'] },
+        ],
       },
       {
-        id: 'connection-state', title: 'Separate alignment from connection',
-        tension: 'Alignment does not mean a connection or message transmission has completed.',
-        choice: 'Distinguish blue Connecting from green Connected, with Sending shown separately.',
-        reasoning: 'The simulated rationale is to avoid presenting success before connection.',
-        tradeoff: 'More states need clear wording, even when the action remains holding still.',
-        evidence: { kind: 'design-intent', text: 'Keep system progress distinct from alignment.', source: 'S03 and reference screens A02–A04', limitation: 'Visible states support the interface description; the reasoning is simulated.' },
+        id: 'connection-state', label: 'Connection States', title: 'Separate alignment from connection',
+        blocks: [
+          { type: 'text', paragraphs: ['Blue Connecting means the phone is aligned but still needs to be held steady. Green Connected confirms the connection, while Sending remains a separate in-progress state. The simulated rationale is to avoid presenting alignment as task completion.', 'Reference screens A02–A04 support the visible state differences. The reasoning comes from simulation S03 and does not establish the original design process.'] },
+        ],
       },
     ],
   } },

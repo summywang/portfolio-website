@@ -65,9 +65,9 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
           {!!problem.content.pains.length && <ul className="constraint-list">{problem.content.pains.map(pain => <li key={pain.title}><FontAwesomeIcon icon={faCircleExclamation} aria-hidden="true" /><div><h3>{pain.title}</h3><p>{pain.body}</p></div></li>)}</ul>}
         </Section>}
         {strategy.content && <Section id="strategy" label={chapterLabels.strategy} chapter={strategy.content} />}
-        {decisions.content && <Section id="decisions" label={chapterLabels.decisions} chapter={decisions.content}>
-          {decisions.content.items.map((decision, i) => <KeyDecision key={decision.id} decision={decision} index={i} />)}
-        </Section>}
+        {decisions.content && <div id="decisions" className="decision-list article-width" aria-label="Key decisions">
+          {decisions.content.items.map(decision => <KeyDecision key={decision.id} decision={decision} />)}
+        </div>}
         {experience.content && <Section id="experience" label={chapterLabels.experience} chapter={experience.content}>
           <StepCarousel steps={experience.content.steps} caption={experience.content.caption} />
         </Section>}

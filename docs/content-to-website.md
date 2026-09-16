@@ -19,14 +19,14 @@
 | Fast Context | `snapshot` | 固定摘要與 Product／My role／Timeline／Focus／Team；之後按需加 context |
 | Problem Framing | `problem` | 引言＋pain points |
 | Strategic Direction | `strategy` | insight 如何形成解題原則與優先順序 |
-| Key Decisions | `decisions` | 可重複的決策模組，各自說清 tension、choice、reasoning、tradeoff |
+| Key Decisions | `decisions` | 不顯示整章開頭；直接呈現可重複的決策內容單元，以 feature label＋action title 開場，文字與媒體順序跟隨 `案例.md` |
 | Real Product Experience | `experience` | 有順序的步驟／狀態；不重述決策理由 |
 | Impact | `impact` | 證據類型、來源、限制；意圖不當成成果 |
 | Reflection | `reflection` | 作者確認的學習、未解問題、取捨 |
 
 Hero／Snapshot 的版式固定，後續篇幅、決策數量、圖片／影片配置可隨內容調整。Section label 交代職責，title 寫該專案的 action title。Focus 用 2–5 個可支持的領域／能力短 tag；自動柔色配色固定由標籤文字決定，避免重繪時閃動。
 
-三個中段的重點與反例以內容庫 `案例章節架構.md` 為準，不在這裡複製第二套寫作規則。方向章可很短；決策章承載推理；體驗章承載操作序列。
+三個中段的重點與反例以內容庫 `案例章節架構.md` 為準，不在這裡複製第二套寫作規則。方向章可很短；決策內容單元承載推理；體驗章承載操作序列。網站不顯示 Key Decisions 的總 label、總標題或編號，這個章節只存在於內容結構與無障礙標示中。
 
 ## Schema 使用方式
 
@@ -40,7 +40,22 @@ reflection: { omitted: '作者尚未確認反思；目前只供預覽' },
 
 這是處理缺漏的能力，不代表可以任意刪除八章功能。判斷是否可省略、是否完成仍依內容工作流程。Snapshot 欄位未知時不填，不寫假時程／團隊；固定欄位位置不等於必須有值。媒體與 links 是選配，空陣列不會留下空框。舊 `?lang=en` 不是翻譯功能；語言來自案例的 `language`，不要生成未授權的雙語副本。
 
-每個 Decision 必須有獨立 id、title、tension、choice、reasoning；alternatives、tradeoff、evidence 與 media 按來源選用。不存在的 alternatives 或研究不補寫。Evidence 的 kind：
+每個 Decision 必須有獨立 `id`、`label`、`title` 與有順序的 `blocks`。`案例.md` 使用 `### Feature label — Action title`；網站資料將破折號前後分別映射為小字與主標題。`blocks` 可依內容原順序重複使用文字或媒體：
+
+```ts
+{
+  id: 'live-prototype',
+  label: 'Live Prototype',
+  title: 'Prototyping in uncharted territories…',
+  blocks: [
+    { type: 'text', paragraphs: ['第一段正文。', '第二段正文。'] },
+    { type: 'media', media: { type: 'video', src: '/assets/projects/example/prototype.mp4', alt: '操作描述' } },
+    { type: 'text', paragraphs: ['媒體後的補充與證據界線。'] },
+  ],
+}
+```
+
+不要把敘事重新拆成 `The decision`、`Why this direction`、`The tradeoff` 等固定欄位。推理與證據界線寫入讀者正文；Key Decisions 不生成獨立灰色 Design intent／evidence 卡。Impact 仍可使用 Evidence，其 kind：
 
 - `design-intent`：設計意圖，不能聲稱已驗證。
 - `observation`／`feedback`：觀察與質性回饋，標明範圍。

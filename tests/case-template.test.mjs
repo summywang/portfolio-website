@@ -49,6 +49,13 @@ test('registered cases have unique slugs, usable media and explicit chapter cove
     }
     const decisions = data.decisions.content?.items ?? [];
     assert.equal(new Set(decisions.map(item => item.id)).size, decisions.length);
+    for (const decision of decisions) {
+      assert.ok(decision.label.trim() && decision.title.trim());
+      assert.ok(decision.blocks.length, 'decision needs ordered content blocks');
+      for (const block of decision.blocks) {
+        if (block.type === 'text') assert.ok(block.paragraphs.length && block.paragraphs.every(text => text.trim()));
+      }
+    }
     await walk(data);
   }
 });
@@ -60,7 +67,11 @@ test('sample renders eight chapter responsibilities in order and distinguishes s
   for (const anchor of anchors) { const at = html.indexOf(anchor); assert.ok(at > previous, anchor); previous = at; }
   assert.match(html, /Template demonstration/);
   assert.match(html, /Focus/);
-  assert.doesNotMatch(html, />Skills<|As UX lead|8 separate emergency sessions/);
+  assert.match(html, /Alignment Guidance/);
+  assert.match(html, /Reference prototype footage/);
+  assert.doesNotMatch(html, />Skills<|As UX lead|8 separate emergency sessions|Make each change in state actionable|decision-number/);
+  const decisionMarkup = html.slice(html.indexOf('id="decisions"'), html.indexOf('id="experience"'));
+  assert.doesNotMatch(decisionMarkup, /The decision|Why this direction|Design intent|evidence-note/);
 });
 
 const minimal = {

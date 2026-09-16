@@ -11,9 +11,17 @@ export interface Evidence {
   kind: 'design-intent' | 'observation' | 'feedback' | 'shipped' | 'measured';
   text: string; source: string; limitation?: string;
 }
+export type DecisionBlock =
+  | { type: 'text'; paragraphs: string[] }
+  | { type: 'media'; media: Media };
 export interface Decision {
-  id: string; title: string; tension: string; choice: string; reasoning: string;
-  alternatives?: string; tradeoff?: string; evidence?: Evidence; media?: Media[];
+  id: string;
+  /** Short generic feature or workstream name, rendered as an eyebrow. */
+  label: string;
+  /** Reader-facing action title. */
+  title: string;
+  /** Ordered directly from 案例.md; text and media may repeat in any sequence. */
+  blocks: DecisionBlock[];
 }
 export interface ExperienceStep { id: string; title: string; text: string; media?: Media }
 export interface CaseStudyData {
@@ -33,7 +41,7 @@ export interface CaseStudyData {
   /** 4. Insight -> principles and priorities. */
   strategy: OptionalChapter<Chapter>;
   /** 5. Choices and reasoning, not a product tour. */
-  decisions: OptionalChapter<Chapter & { items: Decision[] }>;
+  decisions: OptionalChapter<{ items: Decision[] }>;
   /** 6. Ordered usage / state transitions without repeating reasoning. */
   experience: OptionalChapter<Chapter & { steps: ExperienceStep[]; caption?: string }>;
   /** 7. Evidence and attribution. */
@@ -42,6 +50,6 @@ export interface CaseStudyData {
   reflection: OptionalChapter<Chapter>;
 }
 export const chapterLabels = {
-  problem: 'Problem framing', strategy: 'Strategic direction', decisions: 'Key decisions',
+  problem: 'Problem framing', strategy: 'Strategic direction',
   experience: 'Real product experience', impact: 'Impact', reflection: 'Reflection',
 } as const;

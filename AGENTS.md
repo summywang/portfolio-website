@@ -10,6 +10,8 @@ The Snapshot field is **Focus**, shown as small, soft-colored tags with stable a
 
 The Pixel sample is a labeled simulation with reference assets, not the owner's portfolio experience. Preserve this distinction. Do not transfer its narrative, people, statistics or outcomes into new projects.
 
+Key Decisions render without a visible chapter intro or numbering. Each decision starts with a short feature label and a reader-facing action title, followed by text and media blocks in the exact sequence defined by `案例.md`. Do not generate fixed `The decision` / `Why this direction` rows or separate Design intent cards.
+
 Run the local server yourself and open the preview in the browser available to this environment. Do not give the user server-start instructions when you can run it.
 
 Before making substantial visual changes, use the Product Design plugin's `get-context` skill when the visual source is unclear or no longer matches the current goal. When the user gives durable prototype-specific design feedback, preferences, or decisions, record them in `AGENTS.md`.
