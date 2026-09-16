@@ -1,0 +1,47 @@
+[
+  {
+    "file": "/assets/fonts/open-runde-regular.woff2",
+    "source": "https://dousanmiao.com/assets/OpenRunde-Regular-Crq_kbPk.woff2",
+    "kind": "font"
+  },
+  {
+    "file": "/assets/fonts/open-runde-medium.woff2",
+    "source": "https://dousanmiao.com/assets/OpenRunde-Medium-Ci8G7la9.woff2",
+    "kind": "font"
+  },
+  {
+    "file": "/assets/fonts/open-runde-semibold.woff2",
+    "source": "https://dousanmiao.com/assets/OpenRunde-Semibold-DFJ5egKh.woff2",
+    "kind": "font"
+  },
+  {
+    "file": "/assets/fonts/open-runde-bold.woff2",
+    "source": "https://dousanmiao.com/assets/OpenRunde-Bold-BeFL_mDB.woff2",
+    "kind": "font"
+  },
+  {
+    "file": "/assets/media/satellite.mp4",
+    "source": "https://dousanmiao.com/assets/Satellite-3-Czjp-1Xy.mp4",
+    "kind": "video"
+  },
+  {
+    "file": "/assets/media/emergency-questions.png",
+    "source": "https://dousanmiao.com/assets/Satellite-2-YHI9QYF6.png",
+    "kind": "image"
+  },
+  {
+    "file": "/assets/media/prototype.mp4",
+    "source": "https://dousanmiao.com/assets/Protopie-By2QXhtS.mp4",
+    "kind": "video"
+  },
+  {
+    "file": "/assets/media/emergency-call.mp4",
+    "source": "https://dousanmiao.com/assets/Satellite%20Veo-1-DKulf-cr.mp4",
+    "kind": "video"
+  },
+  {
+    "file": "/assets/media/emergency-response.mp4",
+    "source": "https://dousanmiao.com/assets/Satellite%20Veo-4-CWxX8DR3.mp4",
+    "kind": "video"
+  }
+]
