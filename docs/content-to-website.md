@@ -6,7 +6,7 @@
 
 完稿內容保留在 `portfolio-content/projects/<project>/案例.md`，事實、素材來源與可主張界線保留在同目錄的 `專案筆記.md`。建站 AI 會讀取這兩份文件，使用現有 case study template 建立該專案的獨立頁面。
 
-建站過程不會在網站 repository 另寫一份案例草稿，也不會複製 Satellite Demo 的內容。它只會：
+建站 AI 只會：
 
 1. 確認內容與素材可用。
 2. 把八章內容映射到共用模板。
