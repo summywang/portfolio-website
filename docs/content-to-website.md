@@ -1,8 +1,23 @@
 # 從內容案例到專案網站
 
-本文件是網站 AI 的實作入口。內容的唯一編輯來源仍是 `portfolio-content/projects/<project>/案例.md`；事實、素材來源與可主張界線在同目錄的 `專案筆記.md`。網站資料檔只是對外內容的呈現映射，不在網站另寫一份案例草稿。
+這份文件是給「接手建站的 AI」使用，不是給作品集作者填寫的第二份規格。
 
-## 接手順序
+## 你只需要知道
+
+完稿內容保留在 `portfolio-content/projects/<project>/案例.md`，事實、素材來源與可主張界線保留在同目錄的 `專案筆記.md`。建站 AI 會讀取這兩份文件，使用現有 case study template 建立該專案的獨立頁面。
+
+建站過程不會在網站 repository 另寫一份案例草稿，也不會複製 Satellite Demo 的內容。它只會：
+
+1. 確認內容與素材可用。
+2. 把八章內容映射到共用模板。
+3. 為專案建立獨立資料檔與網址。
+4. 放入已確認且有使用權的圖片或影片。
+5. 預覽並檢查電腦、手機、媒體與互動。
+6. 確認無誤後 commit 與 push；公開部署仍需另行授權。
+
+如果你只是準備作品集內容，讀到這裡就足夠。下方是建站 AI 需要執行的流程與技術附錄。
+
+## AI 接手流程
 
 1. 讀兩個 repositories 的 AGENTS、內容庫 README 與 Git 規範，檢查各自 Git 狀態後同步 main。兩庫保持 Private。
 2. 讀內容庫的 `案例章節架構.md`、目標 `案例.md` 及筆記中的狀態、事實／來源、素材與缺口。內容未完稿時只能製作標明用途的預覽；不能把待辦或虛構情節發布成真實經歷。
@@ -11,7 +26,11 @@
 5. 將授權且已確認的網頁素材放 `public/assets/projects/<slug>/`，在既有 `docs/asset-manifest.json` 登記來源、原內容路徑、使用章節與授權／確認狀態。原始大檔留在內容庫的素材工作流程，不為網站搬入所有素材。缺檔時回報，不能沿用 Pixel 檔案冒充。
 6. 執行 typecheck、test:content、build、test:sites，開啟本機預覽；確認桌機／手機、明暗模式、媒體與鍵盤操作。檢查差異與來源，commit、push。公開發布或部署另依使用者授權處理。
 
-## 八章映射
+## 技術附錄（實作 AI 使用）
+
+以下內容說明 schema、媒體、測試與舊系統的實作細節。作品集作者不需要依這些技術欄位改寫 `案例.md`。
+
+### 八章映射
 
 | 內容章節 | Schema 欄位 | 呈現 |
 |---|---|---|
@@ -28,7 +47,7 @@ Hero／Snapshot 的版式固定，後續章節依內容端交付呈現。各章�
 
 實作上，`context.highlights` 只在 `案例.md` 規劃 supporting context 時映射為卡片；沒有規劃就不渲染該區塊。Impact 與 Reflection 的選配媒體映射到 `Chapter.media`。Focus tag 的文字照錄映射，柔色配色由網站根據標籤文字穩定產生，不改寫或新增標籤。
 
-## Template reference 與 Demo case
+### Template reference 與 Demo case
 
 - `#/template-reference` 是中性的版式參考頁：只展示固定 Hero／Snapshot、八章職責、可變決策數量與選配媒體位置。它不是案例、沒有專案事實，也不放進 `caseStudies` registry。
 - `#/satellite-sos` 是明確標示的 **Demo case**：用模擬敘事與第三方參考媒體測試模板能力。它不是空白模板，也不是新專案的內容起點。
@@ -37,7 +56,7 @@ Hero／Snapshot 的版式固定，後續章節依內容端交付呈現。各章�
 
 三個中段的內容職責、範例與長度以內容庫 `案例章節架構.md` 為準，不在這裡複製第二套寫作規則，實作 AI 也不自行合併或重新分類。網站呈現上不顯示 Key Decisions 的總 label、總標題或編號，這個章節只存在於內容結構與無障礙標示中。
 
-## Schema 使用方式
+### Schema 使用方式
 
 每個第三至八章欄位都必須明確提供其中一種：
 
@@ -73,7 +92,7 @@ reflection: { omitted: '作者尚未確認反思；目前只供預覽' },
 
 `source` 是可公開的來源說明，不能放內部筆記、研究者個資或秘密資料。詳細來源映射留在內容庫筆記。模擬或參考案例須使用對應 `provenance.kind` 並提供可見 notice。正式案例的角色與結果必須重新從該專案來源填入。
 
-## 媒體
+### 媒體
 
 ```ts
 { type: 'image', src: '/assets/projects/my-project/flow.webp', alt: '有意義的畫面描述', caption: '圖說' }
@@ -88,7 +107,7 @@ reflection: { omitted: '作者尚未確認反思；目前只供預覽' },
 - StepCarousel 接收任何步驟數量，含無媒體文字步驟。每步的 media caption 由輪播在畫面下呈現；不要把唯一的重要資訊寫在圖片裡。
 - 原 `scripts/import-source-assets.mjs` 是參考來源的一次性匯入腳本，含舊資產 ID；新增專案不要執行它。
 
-## 驗收與交付
+### 驗收與交付
 
 只提供 `案例.md` 的文字還不足以產生有素材的完整網站：接手 AI 需要相對路徑可用的 assets、讀取筆記的權限，以及此網站 repository。素材不齊可做無素材預覽，但須回報缺口。
 
