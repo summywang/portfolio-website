@@ -24,9 +24,9 @@
 | Impact | `impact` | 證據類型、來源、限制；意圖不當成成果 |
 | Reflection | `reflection` | 作者確認的學習、未解問題、取捨 |
 
-Hero／Snapshot 的版式固定，後續篇幅、決策數量、圖片／影片配置可隨內容調整。Section label 交代職責，title 寫該專案的 action title。Focus 用 2–5 個可支持的領域／能力短 tag；自動柔色配色固定由標籤文字決定，避免重繪時閃動。
+Hero／Snapshot 的版式固定，後續章節依內容端交付呈現。各章的字數、數量、是否選配、文字與媒體順序，都以內容庫 `案例章節架構.md` 與目標專案 `案例.md` 為準；本文件不另行定義內容規則。
 
-Fast Context 可用 `context.highlights` 呈現 1–3 張背景卡片；內容可以是已確認的環境、關係或來源可靠的統計，不為了填版面創造數字。Impact 與 Reflection 繼承 `Chapter.media`，可依 `案例.md` 在正文後加入圖片或影片。
+實作上，`context.highlights` 只在 `案例.md` 規劃 supporting context 時映射為卡片；沒有規劃就不渲染該區塊。Impact 與 Reflection 的選配媒體映射到 `Chapter.media`。Focus tag 的文字照錄映射，柔色配色由網站根據標籤文字穩定產生，不改寫或新增標籤。
 
 ## Template reference 與 Demo case
 
@@ -35,7 +35,7 @@ Fast Context 可用 `context.highlights` 呈現 1–3 張背景卡片；內容�
 - 真實專案只能從內容庫相對應的 `案例.md` 與來源建立新的資料檔。可重用的是 `CaseStudyData` schema、共用 components 與 CSS；不得重用 Template reference 提示字、Satellite 標題／正文／Focus／媒體／人物／觀察／成果。
 - 若新案例輸出仍包含 `Satellite`、`Dousan`、`Template reference`、`Project title`、`Action title` 等非來源字詞，視為交接失敗，必須在 commit 前排除。
 
-三個中段的重點與反例以內容庫 `案例章節架構.md` 為準，不在這裡複製第二套寫作規則。方向章可很短；決策內容單元承載推理；體驗章承載操作序列。網站不顯示 Key Decisions 的總 label、總標題或編號，這個章節只存在於內容結構與無障礙標示中。
+三個中段的內容職責、範例與長度以內容庫 `案例章節架構.md` 為準，不在這裡複製第二套寫作規則，實作 AI 也不自行合併或重新分類。網站呈現上不顯示 Key Decisions 的總 label、總標題或編號，這個章節只存在於內容結構與無障礙標示中。
 
 ## Schema 使用方式
 
