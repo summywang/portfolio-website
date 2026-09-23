@@ -10,21 +10,21 @@ export const dealerPortal: CaseStudyData = {
     "kind": "original"
   },
   "hero": {
-    "title": "E-Bike Service Tool",
-    "subtitle": "我重新打造了技師診斷與排修 E-Bike 的工作方式",
+    "title": "E-Bike 診斷維護工具",
+    "subtitle": "我重新打造了診斷與排修流程，讓技師更有效率地推進工作",
     "status": "2025 年 3 月上線",
     "media": {
       "type": "image",
       "src": "/assets/projects/dealer-portal/2026-09-21_dealer-portal_overview_default.jpg",
       "alt": "左側工具導覽、中央車輛總覽、右側任務清單",
-      "caption": "工具、車況與待辦同時可見：這是我重新安排維修起點的核心布局。",
+      "caption": "先掌握車況，再選擇行動：我將全車資訊、維護任務與工具放進同一個工作區。",
       "fit": "contain"
     }
   },
   "snapshot": {
     "summary": [
-      "我提出三欄工作區，讓車況、待辦與工具同時可見；並與產品、工程團隊一起，將依關卡推進的服務體驗重構為一套任務導向的維護工具。",
-      "E-Bike Service Tool 是 Dealer Portal 中供經銷商技師診斷、維護電動自行車的工具。作為唯一的 UI/UX 設計師，我聚焦一個改變：讓技師先掌握車況，再決定如何處理。 系統自動診斷，更新與維修則保留由技師主動執行。"
+      "我提出三欄工作區，並與產品、工程團隊一起重整診斷與排修流程，讓技師先掌握全車維護需求，再選擇任務、取得工具與指引，推進眼前的維修工作。",
+      "E-Bike Service Tool 是 Dealer Portal 中供經銷商技師使用的診斷維護工具。作為唯一的 UI/UX 設計師，我聚焦從「看清問題」到「著手處理」的銜接：系統自動診斷並整理待辦，技師依現場情況與專業判斷安排處理，主動執行更新與維修。"
     ],
     "product": "E-Bike Service Tool",
     "role": "Product Designer",
@@ -38,15 +38,15 @@ export const dealerPortal: CaseStudyData = {
   },
   "problem": {
     "content": {
-      "title": "技師被卡在關卡裡，難以立即掌握車況、著手維修",
+      "title": "還沒看清全車問題，技師就得先處理眼前關卡",
       "paragraphs": [
-        "技師需要先知道這台車有哪些問題，再決定如何處理。舊版卻將檢查與更新放在總覽之前；即使進入總覽，畫面也沒有清楚接上下一個維修行動。"
+        "要安排維修，技師需要先掌握車況與維護需求。舊版將檢查與更新放在總覽之前，前面的異常可能阻礙後續資訊取得；進入總覽後，技師仍得自行尋找下一步。工作在掌握問題、安排順序與取得工具之間反覆受阻。"
       ],
       "media": [],
       "pains": [
         {
           "title": "卡在一個問題，就難以看見其他問題",
-          "body": "前面的檢查或更新若卡住，技師便難以及時掌握全車維護需求，影響向車主說明車況與安排維修。",
+          "body": "前面的檢查或更新若卡住，其他維護需求便難以及時看見。技師得隨關卡逐步了解問題，難以一開始就向車主說明車況、安排整體維修。",
           "media": []
         },
         {
@@ -80,10 +80,10 @@ export const dealerPortal: CaseStudyData = {
   },
   "strategy": {
     "content": {
-      "title": "從「系統主導」轉向「任務導向」",
+      "title": "先讓技師看清問題，再由技師決定如何推進",
       "paragraphs": [
-        "我們將發現問題與執行修復分開：系統先呈現能診斷的結果，將需要處理的事項留在工作區；技師再依現場需求選擇行動。必要的技術依賴仍保留，更新與維護都由技師主動執行。",
-        "我將這個方向落在工作區布局、維修內容結構與實體操作圖解上，依序回應三個相連的設計問題：如何讓待辦突出又不藏住工具？看見任務後，如何知道怎麼處理？需要動手檢測時，如何跟得上指引？"
+        "我們將診斷與修復分開：先呈現系統能偵測的異常與維護需求，把尚未檢查的部分明確標示，讓技師有依據地安排接下來的工作。必要的技術依賴仍保留，更新、維護與修復由技師主動執行。",
+        "我將設計重點放在三個相連的環節：用工作區協助判斷要處理什麼，用維修指引接上可採取的行動，再用部件圖解引導實際檢測。每一項設計都要幫助技師從目前的狀態走到下一步。"
       ],
       "media": []
     }
@@ -94,7 +94,7 @@ export const dealerPortal: CaseStudyData = {
         {
           "id": "decision-1",
           "label": "Workspace",
-          "title": "我用三欄布局，平衡任務管理與工具取得",
+          "title": "我把車況、待辦與工具並置，讓技師看清後就能著手",
           "blocks": [
             {
               "type": "text",
@@ -115,7 +115,7 @@ export const dealerPortal: CaseStudyData = {
             {
               "type": "text",
               "paragraphs": [
-                "三欄各自承擔明確任務：左側保留工具、中央呈現車況、右側聚焦當前任務。 歷史紀錄移至 Service Book，讓工作區集中處理眼前這台車。技師能從待辦進入對應處理，也能直接選擇需要的工具。"
+                "我將左側留給工具、中央呈現車況、右側聚焦當前任務，讓技師判斷問題時也能看見行動入口。技師可以從待辦進入對應處理，也能直接使用需要的工具；歷史紀錄則移至 Service Book，讓工作區集中在眼前這台車。"
               ]
             },
             {
@@ -124,14 +124,14 @@ export const dealerPortal: CaseStudyData = {
                 "type": "image",
                 "src": "/assets/projects/dealer-portal/2026-09-21_dealer-portal_overview_component-modal.jpg",
                 "alt": "三欄總覽中的部件資訊浮層與任務側欄",
-                "caption": "三欄版：工具有固定入口，當前待辦持續可見，中央保留車輛與部件情境。",
+                "caption": "三欄版：對照車況與待辦決定要做什麼，再從任務或固定工具入口開始處理。",
                 "fit": "contain"
               }
             },
             {
               "type": "text",
               "paragraphs": [
-                "任務再依對行駛的影響分級，尚未檢查的項目保留獨立狀態。這讓「有什麼問題」與「還有什麼不知道」同時可見，避免沒有錯誤提示就被理解為檢查已完成。"
+                "任務依對行駛的影響分級，協助技師判斷優先順序；尚未檢查的項目也保留獨立狀態。處理完眼前異常後，工作區仍能提醒剩餘檢查，讓技師繼續盤點全車問題。"
               ]
             }
           ]
@@ -139,12 +139,12 @@ export const dealerPortal: CaseStudyData = {
         {
           "id": "decision-3",
           "label": "維修指引",
-          "title": "我將分散的排解資訊，組織成能接著做的指引",
+          "title": "我將問題說明接上排查步驟，讓技師知道如何繼續",
           "blocks": [
             {
               "type": "text",
               "paragraphs": [
-                "我建立三段式維修內容結構，並與 marketing 協作分類與撰寫層次，讓工作區中的待辦接上可執行的指引。相較於受彈窗篇幅限制、散落在不同管道的說明，共同結構讓技師依序理解："
+                "我建立三段式維修內容結構，並與 marketing 協作分類與撰寫層次。技師從待辦進入後，需要知道問題代表什麼，以及接下來能怎麼查；我將原本受彈窗篇幅限制、分散在不同管道的說明，整理成一致的閱讀順序："
               ]
             },
             {
@@ -176,7 +176,7 @@ export const dealerPortal: CaseStudyData = {
         {
           "id": "decision-5",
           "label": "檢測引導",
-          "title": "我把畫面上的指令，對應到技師手上的部件",
+          "title": "我用部件對照圖，將檢測指令轉成能跟著做的操作",
           "blocks": [
             {
               "type": "text",
@@ -197,7 +197,7 @@ export const dealerPortal: CaseStudyData = {
             {
               "type": "text",
               "paragraphs": [
-                "這些圖解支持 Full Diagnosis 中需要人工配合的部分。我也與團隊將檢查整理為四個類別；系統會記錄發現的異常並彙整到 Workspace，讓技師完成問題盤點後，再安排修復。"
+                "這些圖解支持 Full Diagnosis 中需要人工配合的部分。我也與團隊將檢查整理為四個類別；檢測發現異常時先記錄並繼續，完成後彙整到 Workspace，讓技師掌握檢查結果，再安排修復。"
               ]
             }
           ]
@@ -207,9 +207,9 @@ export const dealerPortal: CaseStudyData = {
   },
   "experience": {
     "content": {
-      "title": "看見待辦之後，技師能一路處理到服務紀錄",
+      "title": "從掌握問題到留下紀錄，每一步都有接續的行動",
       "paragraphs": [
-        "以下以一次維修的示範路徑，串起工作區、指引與檢測；在系統允許的範圍內，技師可以選擇不同處理順序。"
+        "這條示範路徑呈現技師如何了解車況、選擇行動、補足檢查並留下紀錄。實際處理順序由技師依現場需求與系統的必要依賴安排。"
       ],
       "media": [],
       "steps": [
@@ -228,7 +228,7 @@ export const dealerPortal: CaseStudyData = {
         {
           "id": "step-2",
           "title": "選擇任務，依指引處理",
-          "text": "技師查看問題說明與排解步驟，再主動執行更新、維護或檢測。",
+          "text": "技師依維修需求選擇任務，查看問題說明與排解步驟，再主動執行更新、維護或檢測。",
           "media": {
             "type": "image",
             "src": "/assets/projects/dealer-portal/2026-09-22_dealer-portal_troubleshooting_full.jpg",
@@ -240,7 +240,7 @@ export const dealerPortal: CaseStudyData = {
         {
           "id": "step-3",
           "title": "補足尚未完成的檢查",
-          "text": "Full Diagnosis 結合自動檢查與人工操作引導，將發現的問題彙整回工作區。",
+          "text": "處理已知異常後，技師仍可依待檢查狀態進行 Full Diagnosis；自動檢查與人工操作發現的問題會彙整回工作區。",
           "media": {
             "type": "image",
             "src": "/assets/projects/dealer-portal/2026-09-22_dealer-portal_full-diagnosis_hmi-assisted.jpg",
@@ -272,7 +272,7 @@ export const dealerPortal: CaseStudyData = {
       ],
       "media": [],
       "closingParagraphs": [
-        "以上呈現使用規模與流程完成情況；事件次數與使用者轉換率分開計算，尚無可比較的舊版完成率基準。"
+        "這些數據呈現工具的使用規模與診斷流程完成情況；事件次數與使用者轉換率分開計算。尚無可比較的舊版完成率或實際修復耗時基準，不能據此量化維修效率的提升。"
       ],
       "evidence": [
         {
@@ -298,7 +298,7 @@ export const dealerPortal: CaseStudyData = {
       "title": "我把內容結構視為持續迭代的設計工作",
       "paragraphs": [
         "與 marketing、售服協作，讓我更重視 UI/UX 如何支持內容持續生長。三段式結構保留一致的理解順序，也能容納新的排解步驟、媒體與檢測模組。後來 Knowledge Base 應用於 Ask AI，讓這份結構工作的價值延續到新的服務方式。",
-        "另一個持續面對的難題，是讓技師願意並能夠完成手動檢測與更新。Full Diagnosis 已提供逐步引導；接下來，我們仍在探索 AI 如何在技師需要動手的時刻給出更即時的協助。"
+        "讓工作持續推進，也需要照顧系統無法自動完成的部分。實際排修仍仰賴技師的專業與手動操作；Full Diagnosis 提供逐步引導，但如何讓技師願意完成檢測與更新，仍是持續面對的難題。我們也在探索 AI 如何在需要動手的時刻給出更即時的協助。"
       ],
       "media": []
     }
