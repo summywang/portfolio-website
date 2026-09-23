@@ -75,7 +75,8 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .case-scroll::-webkit-scrollbar { display: none; }
 .article-width { width: 100%; max-width: var(--article-width); margin-inline: auto; }
 .hero-width { width: 100%; max-width: var(--hero-width); margin-inline: auto; }
-.hero-media > .case-media > img, .hero-media > .case-media > .video-frame { width: 100%; aspect-ratio: 16 / 9; background: var(--surface); }
+.hero-media > .case-media > .video-frame { width: 100%; aspect-ratio: 16 / 9; background: var(--surface); }
+.hero-media > .case-media > img { width: 100%; height: auto; aspect-ratio: auto; background: transparent; box-shadow: 0 1px 3px rgb(0 0 0 / 3%), 0 6px 20px rgb(0 0 0 / 4%); }
 .case-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 56px; }
 .header-copy { flex: 1; min-width: 0; }
 .case-header h1 { outline: none; }
