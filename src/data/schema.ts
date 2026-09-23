@@ -21,7 +21,7 @@ export interface Decision {
   label: string;
   /** Reader-facing action title. */
   title: string;
-  /** Ordered directly from 案例.md; text and media may repeat in any sequence. */
+  /** Author-edited reading order; text and media may repeat in any sequence. */
   blocks: DecisionBlock[];
 }
 export interface ExperienceStep { id: string; title: string; text: string; media?: Media }

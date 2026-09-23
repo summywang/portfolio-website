@@ -1,4 +1,6 @@
-// Generated from projects/dealer-portal/案例.md by scripts/sync-dealer-portal.py.
+// 唯一中文正文來源：作者與 AI 直接共同編輯。
+// 標題 title/subtitle、正文 paragraphs/text、圖說 caption、圖片 src；保留引號與逗號。
+// 事實與來源界線見內容庫的 projects/dealer-portal/專案筆記.md；禁止以舊稿生成覆蓋。
 import type { CaseStudyData } from "../schema";
 export const dealerPortal: CaseStudyData = {
   "slug": "dealer-portal",

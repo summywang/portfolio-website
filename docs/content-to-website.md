@@ -7,7 +7,7 @@
 1. 讀兩庫 AGENTS、內容庫 README、工作流程、Git 規範、案例章節架構、目標案例與筆記。檢查狀態並同步兩庫。
 2. 從案例的中文正文與媒體規劃建立 `src/data/cases/<slug>.ts`，設定真實案例與 zh-Hant，在 registry 註冊。不得複製 Demo 內容；核心資訊已足夠即可製作，待查證主張不補造。
 3. 同步放入使用的媒體，記錄 asset manifest；保留原圖所需情境、圖說及文字順序，輪播用真實流程步驟。共用元件不支援時擴充，不降低內容要求。
-4. 文案與圖說先改內容庫 `案例.md`；布局只改本站。Dealer Portal 執行 `python3 scripts/sync-dealer-portal.py --content-root ../portfolio` 可重建映射。不同電腦傳入實際內容庫路徑。產物可提交，但不要手工改生成文案。
+4. 作者與 AI 直接修改 `src/data/cases/<slug>.ts`，它是唯一正文來源。先讀目前檔案與 Git diff，保留作者改動，局部修訂；不從筆記或歷史 Markdown 整檔生成覆蓋。Markdown 回寫腳本已移除。
 5. 執行 typecheck、test:content、build、test:sites；啟動 dev，檢查桌機／手機、明暗模式、媒體與輪播鍵盤操作。筆記記錄同步與驗收，按 Git 規範提交推送。部署直接使用同一版本。
 
 ## 本機開啟
@@ -16,7 +16,7 @@
 
 ## 技術附錄（實作 AI 使用）
 
-以下內容說明 schema、媒體、測試與舊系統的實作細節。作品集作者不需要依這些技術欄位改寫 `案例.md`。
+以下內容說明 schema、媒體、測試與舊系統的實作細節。作者可直接修改資料檔中的文字，保留 TypeScript 引號、逗號與欄位結構。
 
 ### 八章映射
 
@@ -26,20 +26,20 @@
 | Fast Context | `snapshot` | 固定摘要與 Product／My role／Timeline／Focus／Team；之後按需加 context |
 | Problem Framing | `problem` | 引言＋pain points |
 | Strategic Direction | `strategy` | insight 如何形成解題原則與優先順序 |
-| Key Decisions | `decisions` | 不顯示整章開頭；直接呈現可重複的決策內容單元，以 feature label＋action title 開場，文字與媒體順序跟隨 `案例.md` |
+| Key Decisions | `decisions` | 不顯示整章開頭；直接呈現可重複的決策內容單元，以 feature label＋action title 開場，文字與媒體順序跟隨網站案例資料檔|
 | Real Product Experience | `experience` | 有順序的步驟／狀態；不重述決策理由 |
 | Impact | `impact` | 證據類型、來源、限制；意圖不當成成果 |
 | Reflection | `reflection` | 作者確認的學習、未解問題、取捨 |
 
-Hero／Snapshot 的版式固定，後續章節依內容端交付呈現。各章的字數、數量、是否選配、文字與媒體順序，都以內容庫 `案例章節架構.md` 與目標專案 `案例.md` 為準；本文件不另行定義內容規則。
+Hero／Snapshot 的版式固定，後續章節依內容端交付呈現。各章的字數、數量、是否選配、文字與媒體順序，都以內容庫 `案例章節架構.md` 與目標專案網站案例資料檔為準；本文件不另行定義內容規則。
 
-實作上，`context.highlights` 只在 `案例.md` 規劃 supporting context 時映射為卡片；沒有規劃就不渲染該區塊。Impact 與 Reflection 的選配媒體映射到 `Chapter.media`。Focus tag 的文字照錄映射，柔色配色由網站根據標籤文字穩定產生，不改寫或新增標籤。
+實作上，`context.highlights` 只在網站案例資料檔規劃 supporting context 時映射為卡片；沒有規劃就不渲染該區塊。Impact 與 Reflection 的選配媒體映射到 `Chapter.media`。Focus tag 的文字照錄映射，柔色配色由網站根據標籤文字穩定產生，不改寫或新增標籤。
 
 ### Template reference 與 Demo case
 
 - `#/template-reference` 是中性的版式參考頁：只展示固定 Hero／Snapshot、八章職責、可變決策數量與選配媒體位置。它不是案例、沒有專案事實，也不放進 `caseStudies` registry。
 - `#/satellite-sos` 是明確標示的 **Demo case**：用模擬敘事與第三方參考媒體測試模板能力。它不是空白模板，也不是新專案的內容起點。
-- 真實專案只能從內容庫相對應的 `案例.md` 與來源建立新的資料檔。可重用的是 `CaseStudyData` schema、共用 components 與 CSS；不得重用 Template reference 提示字、Satellite 標題／正文／Focus／媒體／人物／觀察／成果。
+- 真實專案必須依內容庫專案筆記中的已確認事實與來源直接撰寫網站資料檔。可重用的是 `CaseStudyData` schema、共用 components 與 CSS；不得重用 Template reference 提示字、Satellite 標題／正文／Focus／媒體／人物／觀察／成果。
 - 若新案例輸出仍包含 `Satellite`、`Dousan`、`Template reference`、`Project title`、`Action title` 等非來源字詞，視為交接失敗，必須在 commit 前排除。
 
 三個中段的內容職責、範例與長度以內容庫 `案例章節架構.md` 為準，不在這裡複製第二套寫作規則，實作 AI 也不自行合併或重新分類。網站呈現上不顯示 Key Decisions 的總 label、總標題或編號，這個章節只存在於內容結構與無障礙標示中。
@@ -56,7 +56,7 @@ reflection: { omitted: '作者尚未確認反思；目前只供預覽' },
 
 這是處理缺漏的能力，不代表可以任意刪除八章功能。判斷是否可省略、是否完成仍依內容工作流程。Snapshot 欄位未知時不填，不寫假時程／團隊；固定欄位位置不等於必須有值。媒體與 links 是選配，空陣列不會留下空框。舊 `?lang=en` 不是翻譯功能；語言來自案例的 `language`，不要生成未授權的雙語副本。
 
-每個 Decision 必須有獨立 `id`、`label`、`title` 與有順序的 `blocks`。`案例.md` 使用 `### Feature label — Action title`；網站資料將破折號前後分別映射為小字與主標題。`blocks` 可依內容原順序重複使用文字或媒體：
+每個 Decision 必須有獨立 `id`、`label`、`title` 與有順序的 `blocks`。在網站資料直接填入 `label` 小字與 `title` 主標題。`blocks` 可依內容原順序重複使用文字或媒體：
 
 ```ts
 {
@@ -97,8 +97,12 @@ reflection: { omitted: '作者尚未確認反思；目前只供預覽' },
 
 ### 驗收與交付
 
-只提供 `案例.md` 的文字還不足以產生有素材的完整網站：實作 AI 需要相對路徑可用的 assets、讀取筆記的權限，以及此網站 repository。素材不齊可做無素材預覽，但須回報缺口。
+只提供網站案例資料檔的文字還不足以產生有素材的完整網站：實作 AI 需要相對路徑可用的 assets、讀取筆記的權限，以及此網站 repository。素材不齊可做無素材預覽，但須回報缺口。
 
 交付時列出來源案例、新增路由、修改檔案、缺漏與檢查結果。用另一組內容數量或測試 fixture 驗證模板，不把測試假資料註冊成公開作品。不要更改八章敘事來配合舊模板，缺呈現能力時擴充共用元件。
 
 目前 Pixel Satellite SOS Demo case 使用內容庫已標示的模擬情節，與網站既有的第三方參考媒體一起示範八章。素材來源記在 manifest，但來源紀錄不代表已取得公開再使用授權；正式發布前需確認。它不代表真實案例已完成專案探索，也不得作為新案例的內容來源。
+
+## 語言與內部資料
+
+中文正文直接留在網站；確認後建立網站英文資料並共用元件。筆記保存來源、數據口徑與缺口，不複製正文。舊英文 Markdown 僅為停止維護的歷史參考，不自動匯入。純文字匯出僅在要求時由網站單向產生，不反向寫回。

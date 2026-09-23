@@ -2,7 +2,7 @@
 
 ## Case study template
 
-Start new project work with [content-to-website implementation](docs/content-to-website.md). Use the content repository's existing `案例.md` and its sources; do not create a second content draft here.
+Start new project work with [content-to-website implementation](docs/content-to-website.md). The editable `src/data/cases/<slug>.ts` is the sole reader-facing copy source. Read project notes in the content repository for evidence and boundaries; do not create or sync a Markdown case draft.
 
 Hero and Snapshot have a fixed anatomy. Following chapters retain the eight editorial responsibilities while adapting media and decision count to the project. Keep the shared renderer data-driven; never embed project text or media paths in it.
 
@@ -12,9 +12,9 @@ The Snapshot field is **Focus**, shown as small, soft-colored tags with stable a
 
 The Pixel Satellite SOS route is a **Demo case**, not the template and not the owner's portfolio experience. Preserve this distinction. Do not transfer its narrative, labels, people, statistics, media, or outcomes into new projects. `#/template-reference` is the neutral visual anatomy reference; it is not registered in `caseStudies` and its prompts are never project copy.
 
-For every real project, read `portfolio-content/projects/<project>/案例.md` and the cited source boundaries, create a new `src/data/cases/<slug>.ts` with `entryType: 'case-study'`, and register that file. Reuse only shared schema, components, and layout—never duplicate `satellite.ts` as a content starter.
+For every real project, read `portfolio-content/projects/<project>/專案筆記.md` and the cited source boundaries, create a new `src/data/cases/<slug>.ts` with `entryType: 'case-study'`, and register that file. Reuse only shared schema, components, and layout—never duplicate `satellite.ts` as a content starter.
 
-Key Decisions render without a visible chapter intro or numbering. Each decision starts with a short feature label and a reader-facing action title, followed by text and media blocks in the exact sequence defined by `案例.md`. Do not generate fixed `The decision` / `Why this direction` rows or separate Design intent cards.
+Key Decisions render without a visible chapter intro or numbering. Each decision starts with a short feature label and a reader-facing action title, followed by text and media blocks in the exact sequence defined by the editable case data. Do not generate fixed `The decision` / `Why this direction` rows or separate Design intent cards.
 
 Run the local server yourself and open the preview in the browser available to this environment. Do not give the user server-start instructions when you can run it.
 
@@ -28,4 +28,4 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Direct website authoring
 
-After discovery, build the Chinese case directly in this production template while keeping the content repository’s 案例.md synchronized. The first review uses the real components, responsive layout, media and working carousel. Iterate this same page; do not create a simplified preview or wait for prose sign-off before layout work. Chinese comes first, English follows author confirmation. Internal evidence gaps stay in project notes; using production components does not certify unverified claims. Preserve exact text/media order and support real lists rather than flattening them into prose. Prefer a repeatable source mapping for each case.
+After discovery, author the Chinese case directly in `src/data/cases/<slug>.ts` using production components. The author edits this same file. Before every edit, read the current file and Git diff; preserve user edits, make scoped changes, and never regenerate copy from old Markdown or notes. The Markdown-to-website sync script is removed. Keep private evidence, asset boundaries and open questions in project notes, not rendered copy. Chinese stays in the website; add English only after Chinese confirmation and track translation staleness. If a text export is requested, export one-way from website data; it is not an editing source. Do not recreate 案例.md. Review actual responsive layout, media and carousel alongside the copy.
