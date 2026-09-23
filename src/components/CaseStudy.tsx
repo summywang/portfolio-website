@@ -18,7 +18,7 @@ function Section({ id, label, chapter, children }: { id: string; label: string; 
     <h2 id={`${id}-title`} className="type-headline">{chapter.title}</h2>
     <Paragraphs items={chapter.paragraphs} />
     {children}
-    <MediaList items={chapter.media} />
+    <MediaList items={chapter.media} layout={chapter.mediaLayout} />
     <Paragraphs items={chapter.closingParagraphs} />
   </section>;
 }

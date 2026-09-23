@@ -24,7 +24,7 @@ export function CaseMedia({ media, eager = false, paused = false, controls = tru
   </figure>;
 }
 
-export function MediaList({ items }: { items?: Media[] }) {
+export function MediaList({ items, layout = 'stack' }: { items?: Media[]; layout?: 'stack' | 'comparison' }) {
   if (!items?.length) return null;
-  return <div className="media-list">{items.map((media, i) => <CaseMedia key={media.type === 'youtube' ? media.id : media.src + i} media={media} />)}</div>;
+  return <div className={`media-list media-list--${layout}`}>{items.map((media, i) => <CaseMedia key={media.type === 'youtube' ? media.id : media.src + i} media={media} />)}</div>;
 }

@@ -269,7 +269,7 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .meta-focus { min-width: 0; }
 .metadata { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .reference-notice { border-left: 2px solid var(--border); padding-left: 16px; margin-bottom: 24px; font-size: 13px; line-height: 1.65; }
-.section-label { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground); }
+.section-label { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground); }
 .article-section > .section-label { margin: 0 0 7px; }
 .article-section { margin-top: 64px; }
 .decision-list { margin-top: 76px; }
@@ -287,7 +287,7 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .case-media { min-width: 0; }
 .case-media > img { display: block; max-width: 100%; width: 100%; height: auto; border-radius: var(--radius-card); object-fit: var(--media-fit); }
 .case-media video { object-fit: var(--media-fit); }
-.case-media > figcaption { font-size: 12px; line-height: 1.6; margin-top: 8px; color: var(--muted-foreground); }
+.case-media > figcaption { font-size: 14px; line-height: 1.6; margin-top: 8px; color: var(--muted-foreground); }
 .image-fallback { padding: 40px 24px; background: var(--surface); border-radius: var(--radius-card); }
 .step-visual .case-media { height: 100%; }
 .step-visual .case-media > img { height: 100%; border-radius: 0; object-fit: var(--media-fit); }
@@ -321,3 +321,5 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .media-dialog > button { position: sticky; top: 0; float: right; padding: 10px 16px; border-radius: 24px; background: var(--foreground); color: var(--background, white); cursor: pointer; z-index: 1; }
 .media-dialog > img { display: block; width: 100%; height: auto; }
 .media-dialog > p { margin-top: 12px; }
+
+@media (min-width: 768px) { .media-list--comparison { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }

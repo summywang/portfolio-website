@@ -42,6 +42,7 @@ export const dealerPortal: CaseStudyData = {
       "paragraphs": [
         "要安排維修，技師需要先掌握車況與維護需求。舊版將檢查與更新放在總覽之前，前面的異常可能阻礙後續資訊取得；進入總覽後，技師仍得自行尋找下一步。工作在掌握問題、安排順序與取得工具之間反覆受阻。"
       ],
+      "mediaLayout": "comparison",
       "media": [
         {
           "type": "image",

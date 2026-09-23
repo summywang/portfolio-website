@@ -5,7 +5,7 @@ export type Media = (
   | { type: 'youtube'; id: string; alt: string; start?: number }
 ) & { caption?: string; fit?: 'contain' | 'cover'; scale?: number };
 export interface Link { label: string; href: string }
-export interface Chapter { title: string; paragraphs?: string[]; closingParagraphs?: string[]; media?: Media[] }
+export interface Chapter { title: string; paragraphs?: string[]; closingParagraphs?: string[]; media?: Media[]; mediaLayout?: 'stack' | 'comparison' }
 export type OptionalChapter<T> = { content: T; omitted?: never } | { omitted: string; content?: never };
 export interface Evidence {
   kind: 'design-intent' | 'observation' | 'feedback' | 'shipped' | 'measured';
