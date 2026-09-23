@@ -60,8 +60,7 @@ export const dealerPortal: CaseStudyData = {
           "src": "/assets/projects/dealer-portal/2026-09-24_legacy-overview-diagnosis.jpg",
           "alt": "舊版 Bike Overview 以部件小卡顯示序號與韌體資訊，右下疊放逐項檢查的 Automatic Diagnosis 畫面",
           "caption": "之前：以部件資訊為主的總覽（左）及關卡式診斷（右下）",
-          "fit": "contain",
-          "surface": "dark"
+          "fit": "contain"
         },
         {
           "type": "image",
@@ -81,8 +80,8 @@ export const dealerPortal: CaseStudyData = {
           "body": "「我想先修復馬達，但出現了另一個關卡異常」技師無法依現場需求，自主決定處理的優先順序。"
         },
         {
-          "title": "總覽頁幫不上維修：看不到異常零件在哪，也找不到工具",
-          "body": "即使走完關卡進入總覽頁，技師看到的也只是一排零件圖示與序號，不清楚異常零件的外觀和在車上的位置；診斷工具與維修資源不在第一眼的資訊裡，也不顯眼，技師仍得自己摸索下一步。"
+          "title": "總覽頁資訊無助於維修，技師得花時間自己找",
+          "body": "即使走完關卡進入總覽頁，技師看到的是一排零件圖示與序號，不清楚零件的實際外觀與安裝位置；診斷工具與技術文件也不在第一眼可見的資訊裡，技師得另外查找，拖慢維修進度。"
         }
       ]
     }

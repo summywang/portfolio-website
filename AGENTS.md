@@ -36,7 +36,7 @@ After discovery, author the Chinese case directly in `src/data/cases/<slug>.ts` 
 
 Hero title/subtitle spacing is 20px on desktop and 16px on mobile. Snapshot metadata uses four equal desktop columns filling the content width; labels use muted text and values use heading color, with Team on its own full-width row. Problem Framing images follow the complete pain-point list, never appear inside individual pain points.
 
-Section labels use 14px / 600 weight, below the 700-weight headings, in sentence case as written (no uppercase transform or letter-spacing). Case-media captions are at least 14px. Chapter media can opt into `mediaLayout: comparison` for two desktop columns and a mobile stack; Dealer Portal Problem Framing uses this layout. Any image can opt into `surface: "dark"` for a dark-grey (#2B2B2B) padded container, used for light-edged legacy composites.
+Section labels use 14px / 600 weight, below the 700-weight headings, in sentence case as written (no uppercase transform or letter-spacing). Case-media captions are at least 14px. Chapter media can opt into `mediaLayout: comparison` for two desktop columns and a mobile stack; Dealer Portal Problem Framing uses this layout. Comparison images render at the same height, with column widths following each image's aspect ratio, so before/after screenshots read as equal size.
 
 Product Background (`snapshot.context`, label `Product background`) renders after Snapshot and before Problem Framing: title, a short narrative, then `metrics` as the same cards as Impact evidence (three columns desktop, one column with a tighter 10px gap below 768px). Metrics describe product scale, not design results.
 

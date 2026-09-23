@@ -3,7 +3,7 @@ export type Media = (
   | { type: 'image'; src: string; alt: string }
   | { type: 'video'; src: string; alt: string; poster?: string }
   | { type: 'youtube'; id: string; alt: string; start?: number }
-) & { caption?: string; fit?: 'contain' | 'cover'; scale?: number; /** Optional container fill behind the media. */ surface?: 'dark' };
+) & { caption?: string; fit?: 'contain' | 'cover'; scale?: number; };
 export interface Link { label: string; href: string }
 export interface Chapter { title: string; paragraphs?: string[]; closingParagraphs?: string[]; media?: Media[]; mediaLayout?: 'stack' | 'comparison' }
 export type OptionalChapter<T> = { content: T; omitted?: never } | { omitted: string; content?: never };
