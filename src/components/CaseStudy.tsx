@@ -53,7 +53,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
         <div className="header-copy"><h1 ref={title} tabIndex={-1} className="type-display">{hero.title}</h1><p className="type-subtitle">{hero.subtitle}</p></div>
         {hero.status && <span className="glass status-badge">{hero.status}</span>}
       </header>
-      {hero.media && <div className="hero-width hero-media"><CaseMedia media={hero.media} eager /></div>}
+      {hero.media && <div className="hero-width hero-media"><CaseMedia media={hero.media} eager showCaption={false} /></div>}
       <article className="article-body">
         <section className="snapshot article-width" aria-label="Project snapshot">
           {data.provenance.notice && <p className="reference-notice">{data.provenance.notice}</p>}

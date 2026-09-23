@@ -2,8 +2,8 @@ import { useState, useRef, type CSSProperties } from 'react';
 import type { Media } from '../data/schema';
 import { ManagedVideo, YouTubeEmbed } from './Media';
 
-export function CaseMedia({ media, eager = false, paused = false, controls = true }: {
-  media?: Media; eager?: boolean; paused?: boolean; controls?: boolean;
+export function CaseMedia({ media, eager = false, paused = false, controls = true, showCaption = true }: {
+  media?: Media; eager?: boolean; paused?: boolean; controls?: boolean; showCaption?: boolean;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [failed, setFailed] = useState(false);
@@ -18,9 +18,9 @@ export function CaseMedia({ media, eager = false, paused = false, controls = tru
     {media.type === 'image' && <dialog ref={dialog} className="media-dialog" onKeyDown={event => event.stopPropagation()} onClick={event => { if (event.target === event.currentTarget) dialog.current?.close(); }}>
       <button type="button" onClick={() => dialog.current?.close()} autoFocus>關閉圖片</button>
       <img src={media.src} alt={media.alt} loading="lazy" />
-      <p>{media.caption}</p>
+      {showCaption && media.caption && <p>{media.caption}</p>}
     </dialog>}
-    {media.caption && <figcaption>{media.caption}</figcaption>}
+    {showCaption && media.caption && <figcaption>{media.caption}</figcaption>}
   </figure>;
 }
 
