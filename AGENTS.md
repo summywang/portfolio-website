@@ -37,3 +37,5 @@ After discovery, author the Chinese case directly in `src/data/cases/<slug>.ts` 
 Hero title/subtitle spacing is 20px on desktop and 16px on mobile. Snapshot metadata uses four equal desktop columns filling the content width; labels use muted text and values use heading color, with Team on its own full-width row. Problem Framing images follow the complete pain-point list, never appear inside individual pain points.
 
 Section labels use 14px / 600 weight, below the 700-weight headings. Case-media captions are at least 14px. Chapter media can opt into `mediaLayout: comparison` for two desktop columns and a mobile stack; Dealer Portal Problem Framing uses this layout.
+
+Focus tags use 14px text. For Problem Framing, follow the content repository’s 案例章節架構.md: the introduction establishes context and the central tension; pain points explain distinct obstacles and consequences without repeating the introduction. Do not present illustrative scenarios as research quotes or strengthen abandonment claims beyond confirmed evidence.

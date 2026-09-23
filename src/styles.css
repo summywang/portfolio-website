@@ -253,7 +253,7 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 /* Shared case-study anatomy; Focus colors are stable, label-derived accents. */
 .article-body { font-size: 1rem; }
 .focus-tags { list-style: none; padding: 0; margin: 7px 0 0; display: flex; flex-wrap: wrap; gap: 7px; }
-.focus-tag { font-size: 12px; font-weight: 500; line-height: 1.5; border-radius: 7px; padding: 4px 9px; max-width: 100%; overflow-wrap: anywhere; }
+.focus-tag { font-size: 14px; font-weight: 500; line-height: 1.5; border-radius: 7px; padding: 4px 9px; max-width: 100%; overflow-wrap: anywhere; }
 .tone-0 { background: #e7edf9; color: #364d78; }
 .tone-1 { background: #f0e8f5; color: #684679; }
 .tone-2 { background: #e4f1ea; color: #326049; }
@@ -306,7 +306,7 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
   .decision-list { margin-top: 56px; }
   .key-decision + .key-decision { margin-top: 64px; }
   .article-section { margin-top: 48px; }
-  .focus-tag { font-size: 13px; }
+  .focus-tag { font-size: 14px; }
   .step-card { flex-basis: 100%; width: 100%; }
 }
 @media (max-width: 359px) { .metadata { grid-template-columns: 1fr; } }
