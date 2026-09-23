@@ -66,7 +66,7 @@ export function TemplateReference() {
           { id: 'reference-step-2', title: 'Next step title', text: 'Continue the end-to-end sequence.' },
           { id: 'reference-step-3', title: 'Final step title', text: 'Close the flow or show the outcome.' },
         ]} caption="The number of cards follows the actual product flow." /></ReferenceSection>
-        <ReferenceSection label="Impact" title="Impact title"><p>Use only confirmed outcomes. Name the evidence type, source, attribution, and limitations.</p><aside className="evidence-note"><p className="section-label">Evidence type</p><p>Confirmed result with attribution and limitations.</p><p className="evidence-source">Source: verified project evidence</p></aside><MediaSlot /></ReferenceSection>
+        <ReferenceSection label="Impact" title="Impact title"><p>Use only confirmed outcomes. Name the evidence type, source, attribution, and limitations.</p><div className="evidence-grid">{[1, 2, 3].map(item => <aside className="evidence-note" key={item}><p>Confirmed result with attribution and limitations.</p></aside>)}</div><MediaSlot /></ReferenceSection>
         <ReferenceSection label="Reflection" title="Reflection title"><p>Close with author-confirmed learning, tradeoffs, or unresolved questions.</p><MediaSlot /></ReferenceSection>
       </article>
       <footer className="case-footer article-width"><p>Fixed: Hero and Snapshot · Flexible: chapter length, decision count, text and media order</p></footer>

@@ -81,7 +81,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
           <StepCarousel steps={experience.content.steps} caption={experience.content.caption} />
         </Section>}
         {impact.content && <Section id="impact" label={chapterLabels.impact} chapter={impact.content}>
-          {impact.content.evidence.map((evidence, i) => <EvidenceNote key={i} evidence={evidence} />)}
+          <div className="evidence-grid">{impact.content.evidence.map((evidence, i) => <EvidenceNote key={i} evidence={evidence} />)}</div>
         </Section>}
         {reflection.content && <Section id="reflection" label={chapterLabels.reflection} chapter={reflection.content} />}
       </article>

@@ -4,7 +4,9 @@
 
 Start new project work with [content-to-website implementation](docs/content-to-website.md). The editable `src/data/cases/<slug>.ts` is the sole reader-facing copy source. Read project notes in the content repository for evidence and boundaries; do not create or sync a Markdown case draft.
 
-The light-theme template background is #E5E5E5; retain the separate dark-theme palette.
+The light-theme template background is #F4F3F0, body text is #484848 (lighter than #121212 headings), and dividers use #E3E2DD; retain the separate dark-theme palette.
+
+Impact evidence cards use heading color and medium (500) weight, with three columns on desktop and a single column below 768px. Do not render evidence-type labels or Source lines; keep evidence metadata in case data.
 
 Hero and Snapshot have a fixed anatomy. Following chapters retain the eight editorial responsibilities while adapting media and decision count to the project. Keep the shared renderer data-driven; never embed project text or media paths in it.
 

@@ -1,16 +1,10 @@
 import type { Decision, Evidence } from '../data/schema';
 import { CaseMedia } from './CaseMedia';
 
-const evidenceLabels: Record<Evidence['kind'], string> = {
-  'design-intent': 'Design intent', observation: 'Observed behavior',
-  feedback: 'Qualitative feedback', shipped: 'Released', measured: 'Measured outcome',
-};
 export function EvidenceNote({ evidence }: { evidence: Evidence }) {
   return <aside className="evidence-note">
-    <p className="section-label">{evidenceLabels[evidence.kind]}</p>
     <p>{evidence.text}</p>
     {evidence.limitation && <p className="evidence-limit">{evidence.limitation}</p>}
-    <p className="evidence-source">Source: {evidence.source}</p>
   </aside>;
 }
 export function KeyDecision({ decision }: { decision: Decision }) {
