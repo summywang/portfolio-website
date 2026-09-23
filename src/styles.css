@@ -17,7 +17,7 @@
 }
 :root {
   color-scheme: light;
-  --background: #fff; --foreground: #121212; --muted-foreground: #666;
+  --background: #E5E5E5; --foreground: #121212; --muted-foreground: #666;
   --surface: #f3f3f3; --border: #eaeaea; --success: #68d98b; --warning: #b23c30; --focus-ring: #2563eb;
   --glass-fill: linear-gradient(-75deg, #ffffff0d, #ffffff90, #ffffff0d);
   --glass-edge: #00000010;

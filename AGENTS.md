@@ -4,6 +4,8 @@
 
 Start new project work with [content-to-website implementation](docs/content-to-website.md). The editable `src/data/cases/<slug>.ts` is the sole reader-facing copy source. Read project notes in the content repository for evidence and boundaries; do not create or sync a Markdown case draft.
 
+The light-theme template background is #E5E5E5; retain the separate dark-theme palette.
+
 Hero and Snapshot have a fixed anatomy. Following chapters retain the eight editorial responsibilities while adapting media and decision count to the project. Keep the shared renderer data-driven; never embed project text or media paths in it.
 
 Hero media has no visible caption, including in the enlarged image view; retain descriptive alt text. Hero screenshots use their intrinsic aspect ratio with no added letterboxing or cropping, and a very subtle shadow. Videos and neutral template placeholders retain a 16:9 frame. Template reference previews must resemble final components: supporting context uses context cards, Problem Framing uses the real pain-point list, Real Product Experience uses the working carousel, and Impact / Reflection visibly support optional media. Do not replace these with generic wireframe boxes.
