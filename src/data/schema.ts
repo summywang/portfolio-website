@@ -3,7 +3,7 @@ export type Media = (
   | { type: 'image'; src: string; alt: string }
   | { type: 'video'; src: string; alt: string; poster?: string }
   | { type: 'youtube'; id: string; alt: string; start?: number }
-) & { caption?: string; fit?: 'contain' | 'cover'; scale?: number };
+) & { caption?: string; fit?: 'contain' | 'cover'; scale?: number; /** Optional container fill behind the media. */ surface?: 'dark' };
 export interface Link { label: string; href: string }
 export interface Chapter { title: string; paragraphs?: string[]; closingParagraphs?: string[]; media?: Media[]; mediaLayout?: 'stack' | 'comparison' }
 export type OptionalChapter<T> = { content: T; omitted?: never } | { omitted: string; content?: never };
@@ -38,12 +38,14 @@ export interface CaseStudyData {
   provenance: { kind: 'original' | 'reference' | 'simulation'; notice?: string; source?: Link };
   /** 1. Fixed Hero; status describes the product, never writing progress. */
   hero: { title: string; subtitle: string; media?: Media; status?: string };
-  /** 2. Fixed Snapshot, then optional background context. */
+  /** 2. Fixed Snapshot, then Product Background: short scale/validation narrative + metric cards. */
   snapshot: {
     summary: string[]; product?: string; role?: string; timeline?: string; team?: string;
     focus: string[]; links?: Link[];
     context?: Chapter & {
       stats?: { text: string; source: Link }[];
+      /** Product-scale metrics (markets, users, volume), rendered as Impact-style evidence cards. */
+      metrics?: string[];
       highlights?: ContextHighlight[];
     };
   };
@@ -61,6 +63,6 @@ export interface CaseStudyData {
   reflection: OptionalChapter<Chapter>;
 }
 export const chapterLabels = {
-  problem: 'Problem framing', strategy: 'Strategic direction',
+  background: 'Product background', problem: 'Problem framing', strategy: 'Strategic direction',
   experience: 'Real product experience', impact: 'Impact', reflection: 'Reflection',
 } as const;

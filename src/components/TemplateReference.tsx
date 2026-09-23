@@ -1,6 +1,6 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowsToCircle, faCircleExclamation, faSignal, faTree } from '@fortawesome/free-solid-svg-icons';
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { FocusTags } from './FocusTags';
 import { StepCarousel } from './StepCarousel';
 import { Toolbar } from './ui';
@@ -46,10 +46,8 @@ export function TemplateReference() {
           </dl>
         </section>
 
-        <ReferenceSection label="Fast context" title="Context title"><p>Optional background, environment, scale, constraints, or relationships needed before the problem.</p><div className="stats-grid context-grid">
-          <article className="stat-card"><FontAwesomeIcon icon={faSignal} aria-hidden="true" /><h3>Verified context or statistic</h3><p>Short source-grounded explanation.</p></article>
-          <article className="stat-card"><FontAwesomeIcon icon={faTree} aria-hidden="true" /><h3>Usage environment</h3><p>A condition that changes the experience.</p></article>
-          <article className="stat-card"><FontAwesomeIcon icon={faArrowsToCircle} aria-hidden="true" /><h3>System relationship</h3><p>Scale, actors, or connected states.</p></article>
+        <ReferenceSection label="Product background" title="Product background title"><p>Short narrative: what the product is, who relies on it, and why this project mattered, so a busy reader sees a shipped, validated product at a glance.</p><div className="evidence-grid metric-grid">
+          {['Markets or brands supported', 'Number of active users', 'Annual usage volume'].map(item => <aside className="evidence-note" key={item}><p>{item}</p></aside>)}
         </div></ReferenceSection>
         <ReferenceSection label="Problem framing" title="Problem framing title"><p>State the central tension and why the existing experience falls short.</p><ul className="constraint-list">
           {['Pain point title', 'Another pain point', 'Constraint or state gap'].map((item, index) => <li key={item}><FontAwesomeIcon icon={faCircleExclamation} aria-hidden="true" /><div><h3>{item}</h3><p>{index === 0 ? 'Explain the user difficulty in one concise sentence.' : 'Add only the tensions needed to frame the problem.'}</p></div></li>)}

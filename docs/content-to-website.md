@@ -23,7 +23,8 @@
 | 內容章節 | Schema 欄位 | 呈現 |
 |---|---|---|
 | Hero | `hero` | 固定標題、副標、選配產品狀態與 16:9 主媒體 |
-| Fast Context | `snapshot` | 固定摘要與 Product／My role／Timeline／Focus／Team；之後按需加 context |
+| Fast Context | `snapshot` | 固定摘要與 Product／My role／Timeline／Focus／Team |
+| Product Background | `snapshot.context` | label `Product background`；標題、1–2 段短敘述，`metrics` 以 Impact 小卡呈現產品規模 |
 | Problem Framing | `problem` | 引言＋pain points |
 | Strategic Direction | `strategy` | insight 如何形成解題原則與優先順序 |
 | Key Decisions | `decisions` | 不顯示整章開頭；直接呈現可重複的決策內容單元，以 feature label＋action title 開場，文字與媒體順序跟隨網站案例資料檔|
@@ -33,7 +34,7 @@
 
 Hero／Snapshot 的版式固定，後續章節依內容端交付呈現。各章的字數、數量、是否選配、文字與媒體順序，都以內容庫 `案例章節架構.md` 與目標專案網站案例資料檔為準；本文件不另行定義內容規則。
 
-實作上，`context.highlights` 只在網站案例資料檔規劃 supporting context 時映射為卡片；沒有規劃就不渲染該區塊。Impact 與 Reflection 的選配媒體映射到 `Chapter.media`。Focus tag 的文字照錄映射，柔色配色由網站根據標籤文字穩定產生，不改寫或新增標籤。
+實作上，`context.metrics` 是字串陣列，渲染為與 Impact evidence 相同的小卡（`evidence-grid`）；`context.highlights` 為選配的圖示情境卡。沒有規劃 context 就不渲染該區塊。Real Product Experience 輪播為滿版軌道、卡寬 60%（上限 500px），規格見網站 AGENTS.md。Impact 與 Reflection 的選配媒體映射到 `Chapter.media`。Focus tag 的文字照錄映射，柔色配色由網站根據標籤文字穩定產生，不改寫或新增標籤。
 
 ### Template reference 與 Demo case
 

@@ -9,7 +9,7 @@ export function CaseMedia({ media, eager = false, paused = false, controls = tru
   const [failed, setFailed] = useState(false);
   if (!media) return null;
   const style = { '--media-fit': media.fit ?? 'contain', '--media-scale': media.scale ?? 1 } as CSSProperties;
-  return <figure className="case-media" style={style}>
+  return <figure className="case-media" data-fit={media.fit ?? 'contain'} data-surface={media.surface} style={style}>
     {media.type === 'image' && (failed
       ? <div className="image-fallback">{media.alt}</div>
       : <img src={media.src} alt={media.alt} role="button" tabIndex={0} aria-label={`放大圖片：${media.alt}`} onClick={() => dialog.current?.showModal()} onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); dialog.current?.showModal(); } }} loading={eager ? 'eager' : 'lazy'} onError={() => setFailed(true)} />)}

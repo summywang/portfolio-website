@@ -115,16 +115,17 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .prototype-figure figcaption svg { flex-shrink: 0; font-size: 12px; }
 .flow-section { margin-top: 42px; }
 .flow-title { color: var(--muted-foreground); }
-.carousel-track { margin-top: 42px; display: flex; gap: 14px; width: 100%; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; position: relative; border-radius: var(--radius-flow); }
+/* Real Product Experience: full-bleed track (page gutter to gutter); cards are 60% of the track, max 500px (≈2.5 on desktop, ≈1.6 on phones). */
+.carousel-track { margin-top: 42px; display: flex; gap: 14px; width: calc(100vw - 2 * var(--page-gutter)); margin-left: calc(50% - 50vw + var(--page-gutter)); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; position: relative; }
 .carousel-track::-webkit-scrollbar { display: none; }
-.step-card { flex: 0 0 500px; width: 500px; border-radius: var(--radius-flow); background: var(--surface); overflow: hidden; scroll-snap-align: start; display: flex; flex-direction: column; }
-.step-visual { aspect-ratio: 1.2; width: 100%; overflow: hidden; flex-shrink: 0; }
+.step-card { flex: 0 0 60%; width: 60%; max-width: 500px; border-radius: var(--radius-flow); background: var(--surface); overflow: hidden; scroll-snap-align: start; display: flex; flex-direction: column; }
+.step-visual { aspect-ratio: 1; width: 100%; overflow: hidden; flex-shrink: 0; }
 .step-visual .video-frame { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; }
 .step-visual video, .step-visual img { width: 100%; height: 100%; object-fit: cover; transform: scale(var(--media-scale)); }
-.step-copy { padding: 21px; flex: 1; }
+.step-copy { padding: 21px; flex: 1; display: flex; flex-direction: column; gap: 3.5px; }
 .step-number { font-weight: 600; letter-spacing: -.02em; }
-.step-copy p { margin-top: 4px; }
-.carousel-controls { margin-top: 21px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.step-copy p, .step-copy h3, .article-body .step-copy p + p { margin-top: 0; }
+.carousel-controls { margin-top: 14px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .carousel-dots { display: flex; gap: 0; }
 .carousel-dots button { display: grid; place-items: center; width: 24px; height: 44px; border: 0; padding: 0; background: transparent; border-radius: 8px; }
 .carousel-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--muted-foreground); opacity: .25; }
@@ -218,11 +219,7 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
   .constraint-list li > svg { margin-top: 4px; }
   .video-toggle { width: 44px; height: 44px; right: 12px; bottom: 12px; }
   .flow-section { margin-top: 42px; }
-  .carousel-track { margin-top: 28px; border-radius: 28px; scroll-padding-inline: 0; }
-  .step-card { flex-basis: calc(100vw - 64px); width: calc(100vw - 64px); border-radius: 28px; }
-  .step-visual { aspect-ratio: 1; }
-  .step-copy { padding: 21px; }
-  .step-copy p { margin-top: 8px; }
+  .carousel-track { margin-top: 28px; }
   .carousel-controls { margin-top: 16px; flex-wrap: wrap; gap: 8px 16px; }
   .carousel-dots { gap: 8px; }
   .carousel-dots button { width: 44px; height: 44px; }
@@ -269,7 +266,7 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .meta-focus { min-width: 0; }
 .metadata { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .reference-notice { border-left: 2px solid var(--border); padding-left: 16px; margin-bottom: 24px; font-size: 13px; line-height: 1.65; }
-.section-label { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground); }
+.section-label { font-size: 14px; font-weight: 600; color: var(--muted-foreground); }
 .article-section > .section-label { margin: 0 0 7px; }
 .article-section { margin-top: 64px; }
 .decision-list { margin-top: 76px; }
@@ -280,7 +277,7 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .decision-copy p + p { margin-top: 14px; }
 .evidence-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
 .evidence-note { min-width: 0; padding: 21px; background: var(--surface); border-radius: 16px; color: var(--foreground); font-weight: 500; }
-@media (max-width: 767px) { .evidence-grid { grid-template-columns: 1fr; } }
+@media (max-width: 767px) { .evidence-grid { grid-template-columns: 1fr; gap: 10px; } }
 .evidence-note .evidence-limit, .evidence-source { font-size: 13px; line-height: 1.6; }
 .evidence-note p + p { margin-top: 8px; }
 .media-list { display: grid; gap: 28px; margin-top: 28px; }
@@ -293,8 +290,8 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .step-visual .case-media > img { height: 100%; border-radius: 0; object-fit: var(--media-fit); }
 .step-visual .case-media > figcaption { display: none; }
 .step-card { min-width: 0; }
-.step-copy h3 { margin-top: 8px; }
 .step-caption { font-size: 12px; line-height: 1.6; }
+.article-body .step-copy .step-caption { margin-top: 4px; }
 .carousel-dots { flex-wrap: wrap; }
 .stat-source { display: inline-block; font-size: 12px; text-decoration: underline; margin-top: 12px; }
 .project-card + .project-card { margin-top: 24px; }
@@ -307,7 +304,6 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
   .key-decision + .key-decision { margin-top: 64px; }
   .article-section { margin-top: 48px; }
   .focus-tag { font-size: 14px; }
-  .step-card { flex-basis: 100%; width: 100%; }
 }
 @media (max-width: 359px) { .metadata { grid-template-columns: 1fr; } }
 
@@ -323,3 +319,12 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .media-dialog > p { margin-top: 12px; }
 
 @media (min-width: 768px) { .media-list--comparison { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }
+
+/* Walkthrough cards keep the reference's square media area; contained UI screenshots are inset with a soft shadow instead of being cropped. */
+.step-visual .case-media[data-fit="contain"] { padding: 21px; display: flex; align-items: center; justify-content: center; }
+.step-visual .case-media[data-fit="contain"] > img { width: auto; max-width: 100%; height: auto; max-height: 100%; border-radius: 8px; object-fit: contain; box-shadow: 0 1px 3px rgb(0 0 0 / 4%), 0 6px 20px rgb(0 0 0 / 5%); }
+@media (max-width: 767px) { .step-visual .case-media[data-fit="contain"] { padding: 12px; } }
+
+/* Opt-in dark container for screenshots whose own edges are light or uneven. */
+.case-media[data-surface="dark"] > img { background: #2b2b2b; padding: 16px; }
+@media (max-width: 767px) { .case-media[data-surface="dark"] > img { padding: 10px; } }

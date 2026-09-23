@@ -16,7 +16,7 @@ const compiled = await build({
       import { CaseStudy } from './src/components/CaseStudy';
       import { TemplateReference } from './src/components/TemplateReference';
       export { caseStudies } from './src/data/registry';
-      export { focusTone } from './src/components/FocusTags';
+      export { focusTone, distinctTones } from './src/components/FocusTags';
       export const render = data => renderToStaticMarkup(React.createElement(CaseStudy, {data}));
       export const renderReference = () => renderToStaticMarkup(React.createElement(TemplateReference));
     `,
@@ -27,7 +27,7 @@ const compiled = await build({
 });
 const modulePath = path.join(scratch, 'render.mjs');
 await writeFile(modulePath, compiled.outputFiles[0].text);
-const { caseStudies, render, renderReference, focusTone } = await import(pathToFileURL(modulePath));
+const { caseStudies, render, renderReference, focusTone, distinctTones } = await import(pathToFileURL(modulePath));
 
 test('registered cases have unique slugs, usable media and explicit chapter coverage', async () => {
   const slugs = new Set();
@@ -103,7 +103,8 @@ test('template reference is neutral, separate from the case registry, and shows 
   assert.match(html, /Optional/);
   assert.match(html, /constraint-list/);
   assert.match(html, /class="step-card"/);
-  assert.match(html, /Evidence type/);
+  assert.match(html, /Product background/);
+  assert.match(html, /metric-grid/);
   assert.match(html, /template-hero-media/);
   assert.match(html, /Image or video/);
   assert.doesNotMatch(html, /template-slot/);
@@ -124,6 +125,10 @@ test('focus tones stay stable inside the six-color palette', () => {
   for (const label of ['AI Search', '中文標籤', 'Workflow']) {
     assert.equal(focusTone(label), focusTone(label));
     assert.ok(focusTone(label) >= 0 && focusTone(label) < 6);
+  }
+  for (const data of caseStudies) {
+    const tones = distinctTones(data.snapshot.focus).map(([, tone]) => tone);
+    assert.equal(new Set(tones).size, tones.length, `${data.slug} focus tags share a color`);
   }
 });
 

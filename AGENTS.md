@@ -10,9 +10,9 @@ Impact evidence cards use heading color and medium (500) weight, with three colu
 
 Hero and Snapshot have a fixed anatomy. Following chapters retain the eight editorial responsibilities while adapting media and decision count to the project. Keep the shared renderer data-driven; never embed project text or media paths in it.
 
-Hero media has no visible caption, including in the enlarged image view; retain descriptive alt text. Hero screenshots use their intrinsic aspect ratio with no added letterboxing or cropping, and a very subtle shadow. Videos and neutral template placeholders retain a 16:9 frame. Template reference previews must resemble final components: supporting context uses context cards, Problem Framing uses the real pain-point list, Real Product Experience uses the working carousel, and Impact / Reflection visibly support optional media. Do not replace these with generic wireframe boxes.
+Hero media has no visible caption, including in the enlarged image view; retain descriptive alt text. Hero screenshots use their intrinsic aspect ratio with no added letterboxing or cropping, and a very subtle shadow. Videos and neutral template placeholders retain a 16:9 frame. Template reference previews must resemble final components: Product Background uses the Impact-style metric cards, Problem Framing uses the real pain-point list, Real Product Experience uses the working carousel, and Impact / Reflection visibly support optional media. Do not replace these with generic wireframe boxes.
 
-The Snapshot field is **Focus**, shown as small, soft-colored tags with stable automatically assigned colors, wrapping on narrow screens. Tags describe project domains / capabilities; My role separately identifies responsibility.
+The Snapshot field is **Focus**, shown as small, soft-colored tags with stable automatically assigned colors; tags in one list never share a color. They wrap on narrow screens. Tags describe project domains / capabilities; My role separately identifies responsibility.
 
 The Pixel Satellite SOS route is a **Demo case**, not the template and not the owner's portfolio experience. Preserve this distinction. Do not transfer its narrative, labels, people, statistics, media, or outcomes into new projects. `#/template-reference` is the neutral visual anatomy reference; it is not registered in `caseStudies` and its prompts are never project copy.
 
@@ -36,6 +36,10 @@ After discovery, author the Chinese case directly in `src/data/cases/<slug>.ts` 
 
 Hero title/subtitle spacing is 20px on desktop and 16px on mobile. Snapshot metadata uses four equal desktop columns filling the content width; labels use muted text and values use heading color, with Team on its own full-width row. Problem Framing images follow the complete pain-point list, never appear inside individual pain points.
 
-Section labels use 14px / 600 weight, below the 700-weight headings. Case-media captions are at least 14px. Chapter media can opt into `mediaLayout: comparison` for two desktop columns and a mobile stack; Dealer Portal Problem Framing uses this layout.
+Section labels use 14px / 600 weight, below the 700-weight headings, in sentence case as written (no uppercase transform or letter-spacing). Case-media captions are at least 14px. Chapter media can opt into `mediaLayout: comparison` for two desktop columns and a mobile stack; Dealer Portal Problem Framing uses this layout. Any image can opt into `surface: "dark"` for a dark-grey (#2B2B2B) padded container, used for light-edged legacy composites.
+
+Product Background (`snapshot.context`, label `Product background`) renders after Snapshot and before Problem Framing: title, a short narrative, then `metrics` as the same cards as Impact evidence (three columns desktop, one column with a tighter 10px gap below 768px). Metrics describe product scale, not design results.
+
+Real Product Experience matches the dousanmiao.com Satellite SOS "How it works" carousel: the track is full-bleed from page gutter to gutter (not the 860px article column), cards are 60% of the track with a 500px max (≈2.5 visible on desktop, ≈1.6 on phones), 14px gap, 32px radius, square media area, then number / title / text with 21px padding. Controls stay in the article column. Contained UI screenshots are inset with a soft shadow instead of being cropped.
 
 Focus tags use 14px text. For Problem Framing, follow the content repository’s 案例章節架構.md: the introduction establishes context and the central tension; pain points explain distinct obstacles and consequences without repeating the introduction. Do not present illustrative scenarios as research quotes or strengthen abandonment claims beyond confirmed evidence.

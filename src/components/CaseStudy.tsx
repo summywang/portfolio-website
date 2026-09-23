@@ -66,7 +66,8 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
             {snapshot.team && <div className="meta-item meta-team"><dt>Team</dt><dd>{snapshot.team}</dd></div>}
           </dl>
         </section>
-        {snapshot.context && <Section id="context" label="Fast context" chapter={snapshot.context}>
+        {snapshot.context && <Section id="context" label={chapterLabels.background} chapter={snapshot.context}>
+          {!!snapshot.context.metrics?.length && <div className="evidence-grid metric-grid">{snapshot.context.metrics.map(metric => <aside className="evidence-note" key={metric}><p>{metric}</p></aside>)}</div>}
           {!!snapshot.context.stats?.length && <div className="stats-grid">{snapshot.context.stats.map(stat => <div className="stat-card" key={stat.text}><p>{stat.text}</p><a className="stat-source" href={stat.source.href} target="_blank" rel="noreferrer">{stat.source.label}</a></div>)}</div>}
           {!!snapshot.context.highlights?.length && <ContextCards items={snapshot.context.highlights} />}
         </Section>}
