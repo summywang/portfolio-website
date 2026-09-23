@@ -23,7 +23,6 @@ export const dealerPortal: CaseStudyData = {
   },
   "snapshot": {
     "summary": [
-      "2025 年 3 月，我們推出重新設計的 E-Bike 診斷維護工具，讓技師在診斷、維修與更新的過程中，更有效率地推進服務。",
       "作為唯一的 UI/UX 設計師，我與 PO 共同主導整體流程與介面設計，建立任務導向的工作方式與模組化的 UX 基礎，支援未來更多診斷項目與工具的擴充，革新技師的工作體驗。"
     ],
     "product": "E-Bike Service Tool",
