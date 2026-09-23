@@ -64,7 +64,7 @@ test('registered cases have unique slugs, usable media and explicit chapter cove
 });
 
 test('sample renders eight chapter responsibilities in order and distinguishes simulation', () => {
-  const html = render(caseStudies[0]);
+  const html = render(caseStudies.find(data => data.slug === 'satellite-sos'));
   const anchors = ['case-header', 'snapshot', 'id="problem"', 'id="strategy"', 'id="decisions"', 'id="experience"', 'id="impact"', 'id="reflection"'];
   let previous = -1;
   for (const anchor of anchors) { const at = html.indexOf(anchor); assert.ok(at > previous, anchor); previous = at; }
@@ -73,7 +73,7 @@ test('sample renders eight chapter responsibilities in order and distinguishes s
   assert.match(html, /Focus/);
   assert.match(html, /Alignment Guidance/);
   assert.match(html, /Reference prototype footage/);
-  assert.equal(caseStudies[0].snapshot.context?.highlights?.length, 3);
+  assert.equal(caseStudies.find(data => data.slug === 'satellite-sos').snapshot.context?.highlights?.length, 3);
   assert.match(html, /The reference flow begins when a regular call cannot connect/);
   assert.match(html, /context-grid/);
   assert.doesNotMatch(html, />Skills<|As UX lead|8 separate emergency sessions|Make each change in state actionable|decision-number/);
@@ -125,4 +125,15 @@ test('focus tones stay stable inside the six-color palette', () => {
     assert.equal(focusTone(label), focusTone(label));
     assert.ok(focusTone(label) >= 0 && focusTone(label) < 6);
   }
+});
+
+test('Dealer Portal preserves pain points, guidance lists and four real media steps', () => {
+  const data = caseStudies.find(data => data.slug === 'dealer-portal');
+  const html = render(data);
+  assert.equal(data.problem.content.pains.length, 3);
+  assert.equal(data.experience.content.steps.length, 4);
+  assert.ok(data.experience.content.steps.every(step => step.media));
+  assert.match(html, /<li>Description：/);
+  assert.match(html, /157,412/);
+  assert.doesNotMatch(html, /Media plan|素材使用範圍待確認|Demo case|Satellite|383,567/);
 });

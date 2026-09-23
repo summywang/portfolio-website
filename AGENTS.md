@@ -1,8 +1,8 @@
-# Prototype Instructions
+# Portfolio Website Instructions
 
 ## Case study template
 
-Start new project work with [content-to-website handoff](docs/content-to-website.md). Use the content repository's existing `案例.md` and its sources; do not create a second content draft here.
+Start new project work with [content-to-website implementation](docs/content-to-website.md). Use the content repository's existing `案例.md` and its sources; do not create a second content draft here.
 
 Hero and Snapshot have a fixed anatomy. Following chapters retain the eight editorial responsibilities while adapting media and decision count to the project. Keep the shared renderer data-driven; never embed project text or media paths in it.
 
@@ -25,3 +25,7 @@ Before Git/GitHub operations, cross-device restoration, secret handling, or addi
 When implementing from a selected generated mock, treat that image as the source of truth for layout, component anatomy, density, spacing, color, typography, visible content, and hierarchy.
 
 Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts/prepare-sites-build.mjs`, and `tests/sites-worker.test.mjs` intact so the same local prototype can be handed to Sites. Before a Sites handoff, run `npm run build` and `npm run test:sites`; the build must leave `dist/client/index.html`, `dist/server/index.js`, and `dist/.openai/hosting.json`.
+
+## Direct website authoring
+
+After discovery, build the Chinese case directly in this production template while keeping the content repository’s 案例.md synchronized. The first review uses the real components, responsive layout, media and working carousel. Iterate this same page; do not create a simplified preview or wait for prose sign-off before layout work. Chinese comes first, English follows author confirmation. Internal evidence gaps stay in project notes; using production components does not certify unverified claims. Preserve exact text/media order and support real lists rather than flattening them into prose. Prefer a repeatable source mapping for each case.

@@ -43,5 +43,61 @@
     "file": "/assets/media/emergency-response.mp4",
     "source": "https://dousanmiao.com/assets/Satellite%20Veo-4-CWxX8DR3.mp4",
     "kind": "video"
+  },
+  {
+    "file": "/assets/projects/dealer-portal/2026-09-21_dealer-portal_overview_default.jpg",
+    "source": "portfolio-content/projects/dealer-portal/assets/screenshots/2026-09-21_dealer-portal_overview_default.jpg",
+    "kind": "image",
+    "usage": "Chinese case review in production template",
+    "status": "Author supplied; external publication scope remains in project notes"
+  },
+  {
+    "file": "/assets/projects/dealer-portal/2026-09-21_dealer-portal_legacy_automatic-diagnosis.png",
+    "source": "portfolio-content/projects/dealer-portal/assets/screenshots/2026-09-21_dealer-portal_legacy_automatic-diagnosis.png",
+    "kind": "image",
+    "usage": "Chinese case review in production template",
+    "status": "Author supplied; external publication scope remains in project notes"
+  },
+  {
+    "file": "/assets/projects/dealer-portal/2026-09-21_dealer-portal_legacy_bike-overview.png",
+    "source": "portfolio-content/projects/dealer-portal/assets/screenshots/2026-09-21_dealer-portal_legacy_bike-overview.png",
+    "kind": "image",
+    "usage": "Chinese case review in production template",
+    "status": "Author supplied; external publication scope remains in project notes"
+  },
+  {
+    "file": "/assets/projects/dealer-portal/2026-09-22_dealer-portal_beta-search-tools-workspace.png",
+    "source": "portfolio-content/projects/dealer-portal/assets/screenshots/2026-09-22_dealer-portal_beta-search-tools-workspace.png",
+    "kind": "image",
+    "usage": "Chinese case review in production template",
+    "status": "Author supplied; external publication scope remains in project notes"
+  },
+  {
+    "file": "/assets/projects/dealer-portal/2026-09-21_dealer-portal_overview_component-modal.jpg",
+    "source": "portfolio-content/projects/dealer-portal/assets/screenshots/2026-09-21_dealer-portal_overview_component-modal.jpg",
+    "kind": "image",
+    "usage": "Chinese case review in production template",
+    "status": "Author supplied; external publication scope remains in project notes"
+  },
+  {
+    "file": "/assets/projects/dealer-portal/2026-09-22_dealer-portal_troubleshooting_full.jpg",
+    "source": "portfolio-content/projects/dealer-portal/assets/screenshots/2026-09-22_dealer-portal_troubleshooting_full.jpg",
+    "kind": "image",
+    "usage": "Chinese case review in production template",
+    "status": "Author supplied; external publication scope remains in project notes"
+  },
+  {
+    "file": "/assets/projects/dealer-portal/2026-09-22_dealer-portal_full-diagnosis_hmi-assisted.jpg",
+    "source": "portfolio-content/projects/dealer-portal/assets/screenshots/2026-09-22_dealer-portal_full-diagnosis_hmi-assisted.jpg",
+    "kind": "image",
+    "usage": "Chinese case review in production template",
+    "status": "Author supplied; external publication scope remains in project notes"
+  },
+  {
+    "file": "/assets/projects/dealer-portal/2026-09-22_dealer-portal_workspace-lifecycle.png",
+    "source": "portfolio-content/projects/dealer-portal/assets/screenshots/2026-09-22_dealer-portal_workspace-lifecycle.png",
+    "kind": "image",
+    "usage": "Chinese case review in production template",
+    "status": "Author supplied; external publication scope remains in project notes"
   }
 ]

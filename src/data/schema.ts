@@ -5,7 +5,7 @@ export type Media = (
   | { type: 'youtube'; id: string; alt: string; start?: number }
 ) & { caption?: string; fit?: 'contain' | 'cover'; scale?: number };
 export interface Link { label: string; href: string }
-export interface Chapter { title: string; paragraphs?: string[]; media?: Media[] }
+export interface Chapter { title: string; paragraphs?: string[]; closingParagraphs?: string[]; media?: Media[] }
 export type OptionalChapter<T> = { content: T; omitted?: never } | { omitted: string; content?: never };
 export interface Evidence {
   kind: 'design-intent' | 'observation' | 'feedback' | 'shipped' | 'measured';
@@ -13,7 +13,8 @@ export interface Evidence {
 }
 export type DecisionBlock =
   | { type: 'text'; paragraphs: string[] }
-  | { type: 'media'; media: Media };
+  | { type: 'media'; media: Media }
+  | { type: 'list'; items: string[] };
 export interface Decision {
   id: string;
   /** Short generic feature or workstream name, rendered as an eyebrow. */
@@ -47,7 +48,7 @@ export interface CaseStudyData {
     };
   };
   /** 3. Tension + pain points. */
-  problem: OptionalChapter<Chapter & { pains: { title: string; body: string }[] }>;
+  problem: OptionalChapter<Chapter & { pains: { title: string; body: string; media?: Media[] }[] }>;
   /** 4. Insight -> principles and priorities. */
   strategy: OptionalChapter<Chapter>;
   /** 5. Choices and reasoning, not a product tour. */
