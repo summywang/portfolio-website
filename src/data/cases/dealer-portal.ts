@@ -42,38 +42,34 @@ export const dealerPortal: CaseStudyData = {
       "paragraphs": [
         "要安排維修，技師需要先掌握車況與維護需求。舊版將檢查與更新放在總覽之前，前面的異常可能阻礙後續資訊取得；進入總覽後，技師仍得自行尋找下一步。工作在掌握問題、安排順序與取得工具之間反覆受阻。"
       ],
-      "media": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/projects/dealer-portal/2026-09-23_legacy-dashboard.jpg",
+          "alt": "舊版 Bike Overview，以部件小卡顯示序號與韌體資訊",
+          "caption": "之前：以部件資訊為主的總覽",
+          "fit": "contain"
+        },
+        {
+          "type": "image",
+          "src": "/assets/projects/dealer-portal/2026-09-23_task-workspace.jpg",
+          "alt": "新版 Service Tool，左側工具、中央車況、右側 Workspace 任務清單",
+          "caption": "之後：任務為主工具為輔的總覽",
+          "fit": "contain"
+        }
+      ],
       "pains": [
         {
           "title": "卡在一個問題，就難以看見其他問題",
-          "body": "前面的檢查或更新若卡住，其他維護需求便難以及時看見。技師得隨關卡逐步了解問題，難以一開始就向車主說明車況、安排整體維修。",
-          "media": []
+          "body": "前面的檢查或更新若卡住，其他維護需求便難以及時看見。技師得隨關卡逐步了解問題，難以一開始就向車主說明車況、安排整體維修。"
         },
         {
           "title": "最想處理的問題，無法優先著手",
-          "body": "即使已有優先處理的目標，技師仍可能得先排除前面關卡的異常，才能繼續處理原本的維修需求。",
-          "media": [
-            {
-              "type": "image",
-              "src": "/assets/projects/dealer-portal/2026-09-21_dealer-portal_legacy_automatic-diagnosis.png",
-              "alt": "舊版自動診斷、部件異常與排解彈窗",
-              "caption": "前往總覽之前，技師先遇到檢查異常；部分關卡仍需處理後才能繼續。",
-              "fit": "contain"
-            }
-          ]
+          "body": "即使已有優先處理的目標，技師仍可能得先排除前面關卡的異常，才能繼續處理原本的維修需求。"
         },
         {
           "title": "看見部件資料，卻不知道下一步該做什麼",
-          "body": "總覽以序號與韌體版本等部件資料為主，診斷工具與支援入口不顯眼，技師仍得自行找出要處理的項目與可用工具，才能著手維修。",
-          "media": [
-            {
-              "type": "image",
-              "src": "/assets/projects/dealer-portal/2026-09-21_dealer-portal_legacy_bike-overview.png",
-              "alt": "Bike Overview 的部件小卡、序號及韌體資訊，左側車輛資訊下有 Advanced Diagnosis 入口",
-              "caption": "舊版總覽以部件小卡列出身分資料；診斷入口位於車輛資訊下方，維修任務沒有成為畫面重點。",
-              "fit": "contain"
-            }
-          ]
+          "body": "總覽以序號與韌體版本等部件資料為主，診斷工具與支援入口不顯眼，技師仍得自行找出要處理的項目與可用工具，才能著手維修。"
         }
       ]
     }

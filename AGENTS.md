@@ -4,7 +4,7 @@
 
 Start new project work with [content-to-website implementation](docs/content-to-website.md). The editable `src/data/cases/<slug>.ts` is the sole reader-facing copy source. Read project notes in the content repository for evidence and boundaries; do not create or sync a Markdown case draft.
 
-The light-theme template background is #F4F3F0, body text is #484848 (lighter than #121212 headings), dividers use #E3E2DD, and card/media-container surfaces are white (#FFFFFF); retain the separate dark-theme palette.
+The light-theme template background is #F6F6F6, body text is #484848 (lighter than #121212 headings), dividers use #E3E2DD, and card/media-container surfaces are white (#FFFFFF); retain the separate dark-theme palette.
 
 Impact evidence cards use heading color and medium (500) weight, with three columns on desktop and a single column below 768px. Do not render evidence-type labels or Source lines; keep evidence metadata in case data.
 
@@ -33,3 +33,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 ## Direct website authoring
 
 After discovery, author the Chinese case directly in `src/data/cases/<slug>.ts` using production components. The author edits this same file. Before every edit, read the current file and Git diff; preserve user edits, make scoped changes, and never regenerate copy from old Markdown or notes. The Markdown-to-website sync script is removed. Keep private evidence, asset boundaries and open questions in project notes, not rendered copy. Chinese stays in the website; add English only after Chinese confirmation and track translation staleness. If a text export is requested, export one-way from website data; it is not an editing source. Do not recreate 案例.md. Review actual responsive layout, media and carousel alongside the copy.
+
+Hero title/subtitle spacing is 20px on desktop and 16px on mobile. Snapshot metadata uses four equal desktop columns filling the content width; labels use muted text and values use heading color, with Team on its own full-width row. Problem Framing images follow the complete pain-point list, never appear inside individual pain points.

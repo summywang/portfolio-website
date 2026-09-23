@@ -71,7 +71,8 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
           {!!snapshot.context.highlights?.length && <ContextCards items={snapshot.context.highlights} />}
         </Section>}
         {problem.content && <Section id="problem" label={chapterLabels.problem} chapter={problem.content}>
-          {!!problem.content.pains.length && <ul className="constraint-list">{problem.content.pains.map(pain => <li key={pain.title}><FontAwesomeIcon icon={faCircleExclamation} aria-hidden="true" /><div><h3>{pain.title}</h3><p>{pain.body}</p><MediaList items={pain.media} /></div></li>)}</ul>}
+          {!!problem.content.pains.length && <ul className="constraint-list">{problem.content.pains.map(pain => <li key={pain.title}><FontAwesomeIcon icon={faCircleExclamation} aria-hidden="true" /><div><h3>{pain.title}</h3><p>{pain.body}</p></div></li>)}</ul>}
+          <MediaList items={problem.content.pains.flatMap(pain => pain.media ?? [])} />
         </Section>}
         {strategy.content && <Section id="strategy" label={chapterLabels.strategy} chapter={strategy.content} />}
         {decisions.content && <div id="decisions" className="decision-list article-width" aria-label="Key decisions">
