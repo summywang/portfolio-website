@@ -10,8 +10,8 @@ export const dealerPortal: CaseStudyData = {
     "kind": "original"
   },
   "hero": {
-    "title": "E-Bike 診斷維護工具",
-    "subtitle": "我重新打造了能提升技師工作效率的流程。",
+    "title": "E-Bike 診斷維修工具",
+    "subtitle": "我重新打造複雜的診斷流程，讓技師更有效率地展開維修行動",
     "status": "2025 年 3 月上線",
     "media": {
       "type": "image",
@@ -23,9 +23,9 @@ export const dealerPortal: CaseStudyData = {
   },
   "snapshot": {
     "summary": [
-      "作為唯一的 UI/UX 設計師，我從 0 到 1 主導診斷、排修、工具支援與報告管理 4 段體驗設計，並建立模組化的 UX 基礎，支援未來更多診斷項目與工具的擴充，推動技師工作體驗的革新。"
+      "作為唯一的 UI/UX 設計師，我從 0 到 1 主導一套任務導向的用戶流程，設計全新介面，並建立模組化的 UX 基礎，支援未來更多診斷項目與工具的擴充，推動技師工作體驗的革新。"
     ],
-    "product": "E-Bike Service Tool",
+    "product": "Hyena E-Bike Service Tool",
     "role": "Product Designer",
     "timeline": "2025",
     "team": "1 位 PO、1 位 Scrum Master、2 位前端、3 位後端、3 位 QA",
@@ -33,12 +33,12 @@ export const dealerPortal: CaseStudyData = {
       "從 0 到 1",
       "任務導向流程",
       "軟硬體整合",
-      "客製 Material Design 設計系統"
+      "Material Design 設計系統"
     ],
     "context": {
       "title": "服務北美、歐洲與日本經銷商的 e-bike 維修工具",
       "paragraphs": [
-        "Hyena 電輔車系統使用者多為自行車行的經銷商，不一定具備 e-bike 專業維修經驗。工具必須讓新手快速找到問題並完成修復，也讓資深技師保有安排服務的自主權。",
+        "維修工具協助全球自行車品牌的經銷商，持續維護、更新消費者的自行車。 用戶多為自行車行的經銷商，不一定具備 e-bike 專業維修經驗。工具必須讓新手快速找到問題並完成修復，也讓資深技師保有安排服務的自主權。",
         "這是一個軟硬體緊密交織的複雜專案：每項檢測都牽涉實體部件、韌體與雲端驗證，也要同時回應品牌商、售服等內外部利害關係人。"
       ],
       "metrics": [
