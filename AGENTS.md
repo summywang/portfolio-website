@@ -36,10 +36,14 @@ After discovery, author the Chinese case directly in `src/data/cases/<slug>.ts` 
 
 Hero title/subtitle spacing is 20px on desktop and 16px on mobile. Snapshot metadata uses four equal desktop columns filling the content width; labels use muted text and values use heading color, with Team on its own full-width row. Problem Framing images follow the complete pain-point list, never appear inside individual pain points.
 
-Section labels use 14px / 600 weight, below the 700-weight headings, in sentence case as written (no uppercase transform or letter-spacing). Case-media captions are at least 14px. Chapter media can opt into `mediaLayout: comparison` for two desktop columns and a mobile stack; Dealer Portal Problem Framing uses this layout. Comparison images render at the same height, with column widths following each image's aspect ratio, so before/after screenshots read as equal size.
+Section labels use 15px / 600 weight, below the 700-weight headings, in sentence case as written (no uppercase transform or letter-spacing). Case-media captions are at least 14px. Chapter media can opt into `mediaLayout: comparison` for two desktop columns and a mobile stack; Dealer Portal Problem Framing uses this layout. Comparison images render at the same height, with column widths following each image's aspect ratio, so before/after screenshots read as equal size.
 
 Product Background (`snapshot.context`, label `Product background`) renders after Snapshot and before Problem Framing: title, a short narrative, then `metrics` as the same cards as Impact evidence (three columns desktop, one column with a tighter 10px gap below 768px). Metrics describe product scale, not design results.
 
 Real Product Experience matches the dousanmiao.com Satellite SOS "How it works" carousel: the track is full-bleed from page gutter to gutter (not the 860px article column), cards are 60% of the track with a 500px max (≈2.5 visible on desktop, ≈1.6 on phones), 14px gap, 32px radius, square media area, then number / title / text with 21px padding. Controls stay in the article column. Contained UI screenshots are inset with a soft shadow instead of being cropped.
 
 Focus tags use 14px text. For Problem Framing, follow the content repository’s 案例章節架構.md: the introduction establishes context and the central tension; pain points explain distinct obstacles and consequences without repeating the introduction. Do not present illustrative scenarios as research quotes or strengthen abandonment claims beyond confirmed evidence.
+
+Problem Framing pain-point titles and body text use an 8px gap in the shared `.constraint-list`, including Template reference and Dealer Portal, on desktop and mobile.
+
+Image viewers open centered at container width minus 40px (20px per side), with no desktop width cap. Support touch pinch zoom and dragging on mobile; keep the close button accessible.
