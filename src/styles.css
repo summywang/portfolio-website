@@ -73,6 +73,11 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .toolbar-inner { display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
 .case-scroll { position: relative; flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: none; padding: 70px var(--page-gutter) 28px; }
 .case-scroll::-webkit-scrollbar { display: none; }
+.revision-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; font-size: 14px; }
+.revision-nav > span { margin-right: 4px; color: var(--muted-foreground); }
+.revision-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid var(--border); border-radius: 24px; text-decoration: none; color: var(--foreground); }
+.revision-nav a[aria-current="page"] { background: var(--foreground); color: var(--background); }
+.revision-nav small { flex-basis: 100%; color: var(--muted-foreground); }
 .article-width { width: 100%; max-width: var(--article-width); margin-inline: auto; }
 .hero-width { width: 100%; max-width: var(--hero-width); margin-inline: auto; }
 .hero-media > .case-media > .video-frame { width: 100%; aspect-ratio: 16 / 9; background: var(--surface); }
@@ -85,7 +90,7 @@ button.glass:not(:disabled):active, a.glass:active { transform: scale(.95); }
 .case-header .status-badge { margin-top: 8px; }
 .video-frame { aspect-ratio: 16 / 9; position: relative; overflow: hidden; border-radius: var(--radius-card); background: var(--surface); }
 .video-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.video-toggle { position: absolute; bottom: 14px; right: 14px; color: #fff; background: linear-gradient(-75deg,#ffffff18,#ffffff55,#ffffff18); border-color: #ffffff66; box-shadow: inset 0 0 3px #fff9, 0 2px 5px #0003; font-size: 12px; }
+.video-toggle { position: absolute; bottom: 14px; right: 14px; color: var(--foreground); background: var(--surface); border-color: var(--border); box-shadow: 0 2px 5px #0003; font-size: 12px; }
 .media-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 16px; text-align: center; color: var(--foreground); font-size: 14px; }
 .media-fallback a { text-decoration: underline; }
 .article-body { margin-top: 56px; font-size: .875rem; line-height: 1.625; color: var(--muted-foreground); }

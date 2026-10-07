@@ -47,3 +47,5 @@ Focus tags use 14px text. For Problem Framing, follow the content repository’s
 Problem Framing pain-point titles and body text use an 8px gap in the shared `.constraint-list`, including Template reference and Dealer Portal, on desktop and mobile.
 
 Image viewers open centered at container width minus 40px (20px per side), with no desktop width cap. Support touch pinch zoom and dragging on mobile; keep the close button accessible.
+
+When the author requests version comparison, preserve the pre-edit case verbatim in `src/data/revisions/` and expose it through a separate review route, outside the homepage registry. The current `src/data/cases/` file remains the only editable narrative; never sync the archived snapshot back into it. Dealer Portal's 2026-10-08 snapshot includes the author's uncommitted edits. Recording-derived media provenance is tracked in `docs/dealer-portal-2026-10-08-assets.json`.

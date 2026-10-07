@@ -29,7 +29,7 @@ export function ContextCards({ items }: { items: ContextHighlight[] }) {
     <h3>{item.title}</h3>{item.body && <p>{item.body}</p>}
   </article>)}</div>;
 }
-export function CaseStudy({ data }: { data: CaseStudyData }) {
+export function CaseStudy({ data, reviewControls }: { data: CaseStudyData; reviewControls?: ReactNode }) {
   const title = useRef<HTMLHeadingElement>(null);
   const { hero, snapshot, problem, strategy, decisions, experience, impact, reflection } = data;
   useEffect(() => {
@@ -49,6 +49,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
     <a className="skip-link" href="#case-content" onClick={event => { event.preventDefault(); title.current?.focus(); }}>跳至案例內容</a>
     <Toolbar onClose={() => { location.hash = '/projects'; }} />
     <main className="case-scroll" id="case-content" lang={data.language}>
+      {reviewControls}
       <header className="case-header article-width">
         <div className="header-copy"><h1 ref={title} tabIndex={-1} className="type-display">{hero.title}</h1><p className="type-subtitle">{hero.subtitle}</p></div>
         {hero.status && <span className="glass status-badge">{hero.status}</span>}

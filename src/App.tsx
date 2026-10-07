@@ -8,6 +8,7 @@ import { CaseStudy } from './components/CaseStudy';
 import { CaseMedia } from './components/CaseMedia';
 import { FocusTags } from './components/FocusTags';
 import { TemplateReference } from './components/TemplateReference';
+import { dealerPortal as dealerPortalBefore } from './data/revisions/dealer-portal-before-2026-10-08';
 
 const getRoute = () => location.hash.replace(/^#\/?/, '') || 'projects';
 const navigate = (route: string) => { location.hash = route; };
@@ -50,8 +51,15 @@ export function App() {
   const [route, setRoute] = useState(getRoute);
   const reduced = useReducedMotion();
   useEffect(() => { const update = () => setRoute(getRoute()); window.addEventListener('hashchange', update); return () => window.removeEventListener('hashchange', update); }, []);
-  const data = caseStudies.find(item => item.slug === route);
+  const previousRoute = 'dealer-portal-before-2026-10-08';
+  const data = route === previousRoute ? dealerPortalBefore : caseStudies.find(item => item.slug === route);
+  const reviewControls = route === 'dealer-portal' || route === previousRoute ? <nav className="revision-nav article-width" aria-label="案例版本比較">
+    <span>版本比較</span>
+    <a href="#/dealer-portal" aria-current={route === 'dealer-portal' ? 'page' : undefined}>新版</a>
+    <a href={`#/${previousRoute}`} aria-current={route === previousRoute ? 'page' : undefined}>修改前</a>
+    <small>{route === previousRoute ? '2026/10/08 保存的舊稿' : '決策敘事修訂版'}</small>
+  </nav> : undefined;
   return <ThemeProvider><AnimatePresence mode="wait"><motion.div className="route-view" key={route} initial={{ opacity: reduced ? 1 : 0 }} animate={{ opacity: 1 }} exit={{ opacity: reduced ? 1 : 0 }} transition={{ duration: reduced ? 0 : 0.18 }}>
-    {route === 'projects' ? <Projects /> : route === 'template-reference' ? <TemplateReference /> : route === 'design-system' ? <DesignSystem /> : data ? <CaseStudy data={data} /> : <Projects missing />}
+    {route === 'projects' ? <Projects /> : route === 'template-reference' ? <TemplateReference /> : route === 'design-system' ? <DesignSystem /> : data ? <CaseStudy data={data} reviewControls={reviewControls} /> : <Projects missing />}
   </motion.div></AnimatePresence></ThemeProvider>;
 }

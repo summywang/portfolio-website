@@ -1,0 +1,118 @@
+{
+  "source": "作者提供：螢幕錄影 2026-10-05 下午6.02.25.mov",
+  "sourceDurationSeconds": 797.923,
+  "sourceDimensions": [
+    2962,
+    1842
+  ],
+  "sourceStatus": "作者確認為上線版；此車使用非 Hyena 電池。原始 MOV 僅留本機桌面，未加入 Git。",
+  "method": "AVFoundation 原畫面截圖與 H.264 MP4 節錄；沒有重畫或改造產品狀態。HMI 短片省略中段，未加速。",
+  "oldVersion": {
+    "file": "src/data/revisions/dealer-portal-before-2026-10-08.ts",
+    "sha256": "59305df1ce4da0e5d90372d27895a660de9306324a9769d8285621ba25244003",
+    "route": "#/dealer-portal-before-2026-10-08"
+  },
+  "assets": [
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_overview.jpg",
+      "sourceSeconds": 81,
+      "cropIn1440PreviewCoordinates": null,
+      "bytes": 320058,
+      "sha256": "9604d8d08a39b6cec6a742d9e38e2d7076d945bf07b1c9e5bfdbf9ed1f9616dc"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_guidance.jpg",
+      "sourceSeconds": 204,
+      "cropIn1440PreviewCoordinates": null,
+      "bytes": 325292,
+      "sha256": "e924512419e5b99f189fdc87425009d071857a3533317b7fd080c06a7d7e9d43"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_hmi.jpg",
+      "sourceSeconds": 390,
+      "cropIn1440PreviewCoordinates": null,
+      "bytes": 161918,
+      "sha256": "212a12f1849cad49195d0ee3fd940537428316aae249f7da8bd4c7b9356b2567"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_sensor-result.jpg",
+      "sourceSeconds": 288,
+      "cropIn1440PreviewCoordinates": null,
+      "bytes": 168548,
+      "sha256": "1d542995502458fd5d6bcfdddf04de66dfc1a9e1e5846607f06a5909b9112691"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_pending-checks.jpg",
+      "sourceSeconds": 321,
+      "cropIn1440PreviewCoordinates": null,
+      "bytes": 242743,
+      "sha256": "66312f355f1e2f15a1369dde18e644ba163678c73c1f4af042e89ed3a1e58fc9"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_diagnosis-summary.jpg",
+      "sourceSeconds": 522,
+      "cropIn1440PreviewCoordinates": null,
+      "bytes": 191143,
+      "sha256": "dafbbc4f897cab07b091885a1dffca563c77dd8f95c4b312df9b7a10db3843ac"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_all-clear.jpg",
+      "sourceSeconds": 579,
+      "cropIn1440PreviewCoordinates": null,
+      "bytes": 316157,
+      "sha256": "3d88aa85306a37502a9aef5a867e8c110597488b619bc21316b63b33c3cd19d8"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_publication.jpg",
+      "sourceSeconds": 633,
+      "cropIn1440PreviewCoordinates": [
+        477,
+        106,
+        493,
+        690
+      ],
+      "bytes": 102397,
+      "sha256": "892acb7b0413de0162ff413063450870d4c8da2b735378b475fe543936f7ef00"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_workspace.mp4",
+      "sourceRangesSeconds": [
+        [
+          78,
+          95
+        ]
+      ],
+      "speed": 1,
+      "bytes": 5870995,
+      "sha256": "375d08bdfb97a9423cb9c90baeaa3d0611baa5c98e94596e05ebf1a2ab90f8bf"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_guidance.mp4",
+      "sourceRangesSeconds": [
+        [
+          201,
+          218
+        ]
+      ],
+      "speed": 1,
+      "bytes": 8341446,
+      "sha256": "0f0f9d7aa4b9922bb233e0669459c563b49c32f444e37f2b82d2c2543e1016aa"
+    },
+    {
+      "file": "public/assets/projects/dealer-portal/2026-10-08_hmi.mp4",
+      "sourceRangesSeconds": [
+        [
+          390,
+          399
+        ],
+        [
+          443,
+          450
+        ]
+      ],
+      "speed": 1,
+      "bytes": 6596394,
+      "sha256": "dbc21e2239001c8d59a7d736952c396af992b1d243fe1a1c4a9381ce81aafab1"
+    }
+  ]
+}
