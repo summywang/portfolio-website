@@ -10,7 +10,7 @@ Impact evidence cards use heading color and medium (500) weight, with three colu
 
 Hero and Snapshot have a fixed anatomy. Following chapters retain the eight editorial responsibilities while adapting media and decision count to the project. Keep the shared renderer data-driven; never embed project text or media paths in it.
 
-Hero media has no visible caption, including in the enlarged image view; retain descriptive alt text. Hero screenshots use their intrinsic aspect ratio with no added letterboxing or cropping, and a very subtle shadow. Videos and neutral template placeholders retain a 16:9 frame. Template reference previews must resemble final components: Product Background uses the Impact-style metric cards, Problem Framing uses the real pain-point list, Real Product Experience uses the working carousel, and Impact / Reflection visibly support optional media. Do not replace these with generic wireframe boxes.
+Hero media has no visible caption, including in the enlarged image view; retain descriptive alt text. Hero screenshots use their intrinsic aspect ratio with no added letterboxing or cropping, and a very subtle shadow. Local videos also use their intrinsic ratio. Only neutral template placeholders and YouTube embeds retain a 16:9 frame. Template reference previews must resemble final components: Product Background uses the Impact-style metric cards, Problem Framing uses the real pain-point list, Real Product Experience uses the working carousel, and Impact / Reflection visibly support optional media. Do not replace these with generic wireframe boxes.
 
 The Snapshot field is **Focus**, shown as small, soft-colored tags with stable automatically assigned colors; tags in one list never share a color. They wrap on narrow screens. Tags describe project domains / capabilities; My role separately identifies responsibility.
 
@@ -40,7 +40,7 @@ Section labels use 15px / 600 weight, below the 700-weight headings, in sentence
 
 Product Background (`snapshot.context`, label `Product background`) renders after Snapshot and before Problem Framing: title, a short narrative, then `metrics` as the same cards as Impact evidence (three columns desktop, one column with a tighter 10px gap below 768px). Metrics describe product scale, not design results.
 
-Real Product Experience matches the dousanmiao.com Satellite SOS "How it works" carousel: the track is full-bleed from page gutter to gutter (not the 860px article column), cards are 60% of the track with a 500px max (≈2.5 visible on desktop, ≈1.6 on phones), 14px gap, 32px radius, square media area, then number / title / text with 21px padding. Controls stay in the article column. Contained UI screenshots are inset with a soft shadow instead of being cropped.
+Real Product Experience matches the dousanmiao.com Satellite SOS "How it works" carousel: the track is full-bleed from page gutter to gutter (not the 860px article column), cards are 60% of the track with a 500px max (≈2.5 visible on desktop, ≈1.6 on phones), 14px gap, 32px radius, media at full card width with height following its intrinsic ratio, then number / title / text with 21px padding. Controls stay in the article column. Do not inset real screenshots, force square media frames, cap long image heights, or crop/scale content to fill a frame.
 
 Focus tags use 14px text. For Problem Framing, follow the content repository’s 案例章節架構.md: the introduction establishes context and the central tension; pain points explain distinct obstacles and consequences without repeating the introduction. Do not present illustrative scenarios as research quotes or strengthen abandonment claims beyond confirmed evidence.
 
@@ -49,3 +49,5 @@ Problem Framing pain-point titles and body text use an 8px gap in the shared `.c
 Image viewers open centered at container width minus 40px (20px per side), with no desktop width cap. Support touch pinch zoom and dragging on mobile; keep the close button accessible.
 
 When the author requests version comparison, preserve the pre-edit case verbatim in `src/data/revisions/` and expose it through a separate review route, outside the homepage registry. The current `src/data/cases/` file remains the only editable narrative; never sync the archived snapshot back into it. Dealer Portal's 2026-10-08 snapshot includes the author's uncommitted edits. Recording-derived media provenance is tracked in `docs/dealer-portal-2026-10-08-assets.json`.
+
+Author preference (2026-10-09): all real images and local videos fill their containing media width, with automatic height from the actual content ratio. This applies to Hero, decisions, comparison columns, and carousel cards in both narrative versions. No container letterboxing or media padding; preserve the full product UI.

@@ -17,50 +17,92 @@
       "file": "public/assets/projects/dealer-portal/2026-10-08_overview.jpg",
       "sourceSeconds": 81,
       "cropIn1440PreviewCoordinates": null,
-      "bytes": 320058,
-      "sha256": "9604d8d08a39b6cec6a742d9e38e2d7076d945bf07b1c9e5bfdbf9ed1f9616dc"
+      "bytes": 317921,
+      "sha256": "cd944e3b3dbc9d3ea90cd53747beaf55df1ab22880cde34cda6c6084d9769049",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 17,
+        "coordinateSpace": "1920x1194 extracted frame"
+      }
     },
     {
       "file": "public/assets/projects/dealer-portal/2026-10-08_guidance.jpg",
       "sourceSeconds": 204,
       "cropIn1440PreviewCoordinates": null,
-      "bytes": 325292,
-      "sha256": "e924512419e5b99f189fdc87425009d071857a3533317b7fd080c06a7d7e9d43"
+      "bytes": 324621,
+      "sha256": "66f7b069d659ae12fae4cf2aba6b70f0a30fe72c6eb5ee96f27d47b61c77d542",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 17,
+        "coordinateSpace": "1920x1194 extracted frame"
+      }
     },
     {
       "file": "public/assets/projects/dealer-portal/2026-10-08_hmi.jpg",
       "sourceSeconds": 390,
       "cropIn1440PreviewCoordinates": null,
-      "bytes": 161918,
-      "sha256": "212a12f1849cad49195d0ee3fd940537428316aae249f7da8bd4c7b9356b2567"
+      "bytes": 160152,
+      "sha256": "cee8ec3cd3a3b8c1317131800b0b94b765e00bd6609117380fcff23ce91d28c2",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 17,
+        "coordinateSpace": "1920x1194 extracted frame"
+      }
     },
     {
       "file": "public/assets/projects/dealer-portal/2026-10-08_sensor-result.jpg",
       "sourceSeconds": 288,
       "cropIn1440PreviewCoordinates": null,
-      "bytes": 168548,
-      "sha256": "1d542995502458fd5d6bcfdddf04de66dfc1a9e1e5846607f06a5909b9112691"
+      "bytes": 166978,
+      "sha256": "14cfc150750c81b6f5567c9e4e2df765ed5cdfca5dc1a63b16aa959396e4f08b",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 17,
+        "coordinateSpace": "1920x1194 extracted frame"
+      }
     },
     {
       "file": "public/assets/projects/dealer-portal/2026-10-08_pending-checks.jpg",
       "sourceSeconds": 321,
       "cropIn1440PreviewCoordinates": null,
-      "bytes": 242743,
-      "sha256": "66312f355f1e2f15a1369dde18e644ba163678c73c1f4af042e89ed3a1e58fc9"
+      "bytes": 240703,
+      "sha256": "57376ac00a550d7f39b0a4133a342bf3abaf00334df59921d6a8fd0230036c60",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 17,
+        "coordinateSpace": "1920x1194 extracted frame"
+      }
     },
     {
       "file": "public/assets/projects/dealer-portal/2026-10-08_diagnosis-summary.jpg",
       "sourceSeconds": 522,
       "cropIn1440PreviewCoordinates": null,
-      "bytes": 191143,
-      "sha256": "dafbbc4f897cab07b091885a1dffca563c77dd8f95c4b312df9b7a10db3843ac"
+      "bytes": 188824,
+      "sha256": "b6c36f1e85d43c865291196257179b1ee93cf55c4d559e93f9fe62b19e035c0c",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 17,
+        "coordinateSpace": "1920x1194 extracted frame"
+      }
     },
     {
       "file": "public/assets/projects/dealer-portal/2026-10-08_all-clear.jpg",
       "sourceSeconds": 579,
       "cropIn1440PreviewCoordinates": null,
-      "bytes": 316157,
-      "sha256": "3d88aa85306a37502a9aef5a867e8c110597488b619bc21316b63b33c3cd19d8"
+      "bytes": 313808,
+      "sha256": "7fff0e848acbe884f80a34990713209843a653f06fc4b4fb8602b70219e01b07",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 17,
+        "coordinateSpace": "1920x1194 extracted frame"
+      }
     },
     {
       "file": "public/assets/projects/dealer-portal/2026-10-08_publication.jpg",
@@ -83,8 +125,15 @@
         ]
       ],
       "speed": 1,
-      "bytes": 5870995,
-      "sha256": "375d08bdfb97a9423cb9c90baeaa3d0611baa5c98e94596e05ebf1a2ab90f8bf"
+      "bytes": 4545302,
+      "sha256": "89b28b249340a922933d7a3038e2356ecbe6423648db9a7d5f2f63f1b10d3a7f",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 26,
+        "coordinateSpace": "2962x1842 original recording"
+      },
+      "outputFramesPerSecond": 30
     },
     {
       "file": "public/assets/projects/dealer-portal/2026-10-08_guidance.mp4",
@@ -95,8 +144,15 @@
         ]
       ],
       "speed": 1,
-      "bytes": 8341446,
-      "sha256": "0f0f9d7aa4b9922bb233e0669459c563b49c32f444e37f2b82d2c2543e1016aa"
+      "bytes": 6207081,
+      "sha256": "0290d6b40daf7d254db9df0ad838362668263cf31ee7e0f9f01e07dd426a5aed",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 26,
+        "coordinateSpace": "2962x1842 original recording"
+      },
+      "outputFramesPerSecond": 30
     },
     {
       "file": "public/assets/projects/dealer-portal/2026-10-08_hmi.mp4",
@@ -111,8 +167,15 @@
         ]
       ],
       "speed": 1,
-      "bytes": 6596394,
-      "sha256": "dbc21e2239001c8d59a7d736952c396af992b1d243fe1a1c4a9381ce81aafab1"
+      "bytes": 3409041,
+      "sha256": "429edc5281791e7bc3ce972bc69fec8c456966c669f2d4d0777126ec39db5618",
+      "edgeCleanup": {
+        "date": "2026-10-09",
+        "reason": "作者要求移除黑邊；只裁除原錄影左侧空白邊緣，保留完整產品介面",
+        "leftCropPixels": 26,
+        "coordinateSpace": "2962x1842 original recording"
+      },
+      "outputFramesPerSecond": 30
     }
   ]
 }
